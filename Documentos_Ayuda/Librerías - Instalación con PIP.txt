@@ -1,0 +1,19 @@
+Normalmente la instalación de paquetes se hace directamente con el paquete PIP
+    - pip install "librería"
+
+También es posible desde python:
+    - python3 -m pip install "librería"
+
+Listar los paquetes instalados
+    -> pip list   o   pip freeze
+
+Instalar paquetes (desde el entorno activado)
+    -> pip install paquete1 paquete2 paquete3
+
+Instalar paquetes con version 
+    -> pip install -r paquetes.txt
+
+
+Ejemplo paquetes.txt  -> paquete a instalar ~= version a instalar
+    kivymd~=0.104.2.dev0
+    Kivy~=2.0.0rc4

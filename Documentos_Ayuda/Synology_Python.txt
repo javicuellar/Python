@@ -1,0 +1,43 @@
+DOCUMENTACIÓN PARA EJECUTAR PYTHON EN NAS SYNOLOGY
+
+1) Instalar Python en NAS, versión 3 preferiblemente.
+
+2) Permitir conexión SSH para acceder, instalar paquetes, etc.
+    - ssh -l usuario IP=DSN
+
+- Si se quiere acceder desde fuera de la red local, redireccionar puerto 22 del router a la IP del NAS.
+
+3) Instalar pip. Informacion en https://tomonota.net/ejecutar-python-en-synology/
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    - python3 get-pip.py
+
+4) Instalar paquetes PIP
+    - python3 -m pip install "nombre pip"
+
+0) Entorno de trabajo en NAS -> /volume1/Backup/$ Python
+========================================================
+
+5) Crear entorno virtual
+    - Ver versiones Python instaladas ->                    compgen -c python           -> Python / Python3 / Python3.9
+    - Situarse en directorio para crear entorno virtual ->  /volume1/Backup/$ Python
+    - Crear entorno virtual de Python3 (elegir versión) ->  python3 -m venv entorno_virtual_env
+
+    - Uso de entorno    -> entrar en el dir. del entorno -> cd entorno_virtual_env /
+                        -> y ejecutar                    -> source bin/activate
+
+6) EJECUCIÓN SCRIPTS
+    - Directamente en terminal desde SSH
+        * Desde la carpeta:                     python3 -u Archivo.py
+        * Desde cualquier sitio                 python3 -u /ruta/de/carpetas/Archivo.py
+
+    - Programador de tareas (INTERESANTE)
+
+7) Listar y detener ejecución Python
+    - Listar ejecuciones ->     ps -fA | grep python      (salida -> 00:00:03 python3 -u /volume1/rutaCarpetas/Archivo.py)
+    - Detener ejecución ->      pkill -f Archivo.py
+
+
+0) Otros
+    - Actualizar pip ->                 python3 -m pip install –upgrade pip
+    - Lista de paquetes instalados ->   python3 -m pip list
+    - Ver la versión de PIP ->          python3 -m pip -V

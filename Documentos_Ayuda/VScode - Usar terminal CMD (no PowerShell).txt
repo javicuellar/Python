@@ -1,0 +1,26 @@
+Hay que definir en el fichero settings.json    PRINCIPAL
+     -> Ctrol + May + P -> buscar Preferencias Abrir configuración (JOSN)
+
+Importante, poner terminal CMD (quitar Powershell)
+
+{
+    "terminal.integrated.profiles.windows": {
+        "My Command": {
+          "path": "C:\\Windows\\System32\\cmd.exe",
+          "args": [     ]     }            },
+    "terminal.integrated.defaultProfile.windows": "My Command",
+    "python.defaultInterpreterPath":"D:\\Python\\Backdoor_(cliente-servidor)\\Backdoor-env\\Scripts\\python.exe",
+    "editor.fontSize": 15,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "code-runner.executorMap": {
+        "python":
+        "D:\\Python\\Backdoor_(cliente-servidor)\\Backdoor-env\\Scripts\\activate.bat && python -u",
+    }
+}
+
+
+
+OTRAS - NO HACE FALTA
+
+"terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",

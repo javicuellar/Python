@@ -1,0 +1,33 @@
+#   Información en documento Google Python
+#  https://docs.google.com/document/d/1OJLLlmhCapj1woKr1pI71cN9BwIqkdrE52zBmdOhE-E/edit#heading=h.uu54hbzahfop
+
+
+1) Ir al terminal, desde la carpeta donde se desea crear el entorno.
+    USAR TERMINAL CMD (no powershell)
+
+2) Salimos de la carpeta al nivel superiror -> "cd .."
+
+3) Tecleamos    -> python -m venv "carpeta o entorno"
+o tecleamos     -> virtualenv -p python3 "carpeta o entorno"            FUNCIONA
+
+4) Se crea el entorno dentro de la carpeta: interprete python, paquetes, 
+directorio Scripts para activar y desactivar, etc.
+
+5) Y después hay que activar el entorno, primero situarse en el entorno
+"cd "carpeta o entorno" -> Scripts\activate
+    o directamente      -> .\entorno\Scripts\activate
+
+
+
+Para ejecutar el entorno directamente cuando codificamos con VsCode utilizamos 
+el fichero settings.json que situamos en la carpeta .VsCode:
+
+{
+    "editor.fontSize": 15,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "code-runner.executorMap": {
+        "python":
+        "D:\\Python\\PythonVsCode\\Scripts\\activate.bat && python -u",
+    }
+}

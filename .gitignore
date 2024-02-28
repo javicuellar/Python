@@ -1,0 +1,18 @@
+#  No llevamos al repositorio las carpetas
+$ Documentación
+$ Tutorial Python 3 (videos)
+App
+.SynologyWorkingDirectory
+#  Directorios excluidos
+
+# App  - Utilidades
+/App
+
+# Documentación Python
+/Documentos_Ayuda/Libros
+
+# Repositorios Clonados   
+/Repositorios*
+
+
+#  Ficheros

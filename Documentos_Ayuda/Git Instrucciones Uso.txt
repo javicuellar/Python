@@ -1,0 +1,55 @@
+#   Información en documento Google Python
+#  https://docs.google.com/document/d/1OJLLlmhCapj1woKr1pI71cN9BwIqkdrE52zBmdOhE-E/edit#heading=h.uu54hbzahfop
+
+#  Instrucciones Git en VS Code
+
+  1) Abrir carpeta en VS Code donde se situará el proyecto Git
+  2) Desde la terminal -> git init
+  3) Desde el menú de la izq. de Git -> hacemos Commit poniendo el mensaje
+    para actualizar todo el repositorio.
+
+
+#  Instrucciones para Clonar repositorio de Git en local  (he probado otras sin éxito)
+
+  1) Descargar el repositorio en zip e instalar en directorio deseado.
+
+
+#  Traer a local los cambios del repositorio (act. desde Google Colab por ejemplo)  -> git pull
+
+
+# SECCIONES PRINCIPALES DE UN REPOSITORIO
+
+  1) Directorio de trabajo.- donde se agregan, borran y editan los archivos.
+  2) Área de preparación.- donde se preparan los cambios (indexados)
+  3) Directorio git.- al confirmar los cambios, son guardados en el directorio git.
+
+# SENTENCIAS
+
+  * Crear repositorio Git (desde la carpeta del repositorio)    -> git init  ["nombre proyecto"]
+  * Clonar (copiar) un repositorio de remoto                    -> git clone usuario@host:/path_repositorio
+  * Clonar (copiar) repositorio local                           -> git clone /path_repositorio
+  * Añadir un archivo al área de preparación                    -> git add "fichero"
+  * Commit del área de preparación al directorio git            -> git commit -m "comentario"
+
+  * Enviar confirmaciones locales a la rama master (u otra)     -> git push origin  "master"
+  * Crea rama nueva y cambia a ella                             -> git checkout -b "rama"
+  * Cambiar de una rama a otra                                  -> git checkout "rama"
+  * Crear rama (branch) en repositorio                          -> git branch -M "master"
+  * Listar ramas                                                -> git branch
+  * Borrar rama                                                 -> git branch -d "rama"
+  * Fusionar cambios de repositorio remoto con local            -> git pull
+
+  * Fusionar una rama con otra activa                           -> git merge "rama"
+  * Lista de conflictos entre rama y archivo base               -> git diff --base "fichero"
+  * Lista conflictos entre ramas                                -> git diff "rama origen" "rama destino"
+  * Lista de TODOS los conflictos                               -> git diff
+
+  * Marcar commits específicos (lanzamientos v1.0, v2.0)        -> git tag 1.1.0 "insertar commit ID"
+
+  * Lista objetos de servidor remoto que no están en local      -> git fetch origin
+
+  - Ver remotos (??) (salida normal "origin")                   -> git remote
+  - Ver remotos con URLs asociadas a lecturas y escrituras      -> git remote -v
+  - Para conectar el repositorio local a servidor remoto        -> git remote add origin "host-or-remoteURL"
+  - Borrar conexión a servidor remoto                           -> git remote "nombre del repositorio"
+
