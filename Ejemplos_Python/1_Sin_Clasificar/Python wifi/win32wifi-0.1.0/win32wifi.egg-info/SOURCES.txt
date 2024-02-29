@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+win32wifi/Win32NativeWifiApi.py
+win32wifi/Win32Wifi.py
+win32wifi/__init__.py
+win32wifi.egg-info/PKG-INFO
+win32wifi.egg-info/SOURCES.txt
+win32wifi.egg-info/dependency_links.txt
+win32wifi.egg-info/requires.txt
+win32wifi.egg-info/top_level.txt

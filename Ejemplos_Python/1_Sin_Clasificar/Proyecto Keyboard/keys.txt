@@ -1,0 +1,6 @@
+javi 8 [alt gr (down)] 2 [alt gr (up)] gmail.com [esc (down)] hola me llamo javi
+y estoy escribiendo esto porque me aburro mucho
+gracias
+
+
+antes no sacaba las linesas escritas [enter (down)]  [enter (up)] no [left shift (down)] ' [left shift (up)]  [enter (down)]  [enter (up)]  [esc (down)] 
