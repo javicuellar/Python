@@ -5,14 +5,19 @@ App
 .SynologyWorkingDirectory
 #  Directorios excluidos
 
+#  Carpeta Python antigua, hay que ir organizandola hasta eliminarla
+/Python*
+#  Ejemplos Python pendientes de organizar
+/Ejemplos_Python/1_Sin_Clasificar
+
 # App  - Utilidades
 /App
 
 # Documentación Python
 /Documentos_Ayuda/Libros
+/Documentos_Ayuda/Video*
 
 # Repositorios Clonados   
 /Repositorios*
-
 
 #  Ficheros
