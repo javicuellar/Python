@@ -1,0 +1,78 @@
+Quick Start: Developing Python Applications for Oracle Database
+	https://www.oracle.com/database/technologies/appdev/python/quickstartpythononprem.html
+
+1. Install Oracle Database
+	If you do not already have access to an Oracle Database, then download and install Oracle Database XE 21c following these instructions.
+
+	More resources:
+
+	Oracle Database XE Installation Guide for Windows
+
+	Alternatively, if you would like to use an Oracle Autonomous Database in Oracle Cloud instead (for example from the Always Free service),
+	then see the Developing Python Applications for Oracle Autonomous Database tutorial.
+	
+2. Install Python
+
+3. Install python-oracledb
+	Install python-oracledb:	python -m pip install oracledb
+		Depending on your Python installation, you may need to execute the python3 command instead.
+
+	Adding the pip --user option may useful when you do not have permission to write to system directories. 
+	If you are behind an HTTP proxy, you can also add an option like --proxy=http://proxy.example.com:80
+
+	For further assistance and options see Installing python-oracledb on Windows.
+
+4. Create a Python Application
+	Using your favorite text editor, create a new Python file example.py in a directory of your choice. It should contain the following code.
+	Make sure the indentation is the same as shown:
+
+
+import getpass
+import oracledb
+
+pw = getpass.getpass("Enter password: ")
+
+connection = oracledb.connect(
+    user="demopython",
+    password=pw,
+    dsn="localhost/xepdb1")
+
+print("Successfully connected to Oracle Database")
+
+cursor = connection.cursor()
+
+# Create a table
+
+cursor.execute("""
+    begin
+        execute immediate 'drop table todoitem';
+        exception when others then if sqlcode <> -942 then raise; end if;
+    end;""")
+
+cursor.execute("""
+    create table todoitem (
+        id number generated always as identity,
+        description varchar2(4000),
+        creation_ts timestamp with time zone default current_timestamp,
+        done number(1,0),
+        primary key (id))""")
+
+# Insert some data
+
+rows = [ ("Task 1", 0 ),
+         ("Task 2", 0 ),
+         ("Task 3", 1 ),
+         ("Task 4", 0 ),
+         ("Task 5", 1 ) ]
+
+cursor.executemany("insert into todoitem (description, done) values(:1, :2)", rows)
+print(cursor.rowcount, "Rows Inserted")
+
+connection.commit()
+
+# Now query the rows back
+for row in cursor.execute('select description, done from todoitem'):
+    if (row[1]):
+        print(row[0], "is done")
+    else:
+        print(row[0], "is NOT done")
