@@ -1,10 +1,10 @@
-#Ordenar lista de impares: si la lista esta vacÌa, vacÌa. Los pares se quedan
-#como est·n y los impares hay que ordenarlos.
+#   Ordenar lista de impares: si la lista esta vac√≠a, devuelve vac√≠a. Los pares se quedan
+# como est√°n y los impares hay que ordenarlos.
 
-#Ej.- 
-#(sort_array([5, 3, 2, 8, 1, 4])) #, [1, 3, 2, 8, 5, 4])
-#(sort_array([5, 3, 1, 8, 0]))    #, [1, 3, 5, 8, 0])
-#(sort_array([]))                 #,[])
+# Ej.- 
+#    (sort_array([5, 3, 2, 8, 1, 4])) #, [1, 3, 2, 8, 5, 4])
+#    (sort_array([5, 3, 1, 8, 0]))    #, [1, 3, 5, 8, 0])
+#    (sort_array([]))                 #,[])
 
 # modo manual
 def sort_array(s):
@@ -24,6 +24,7 @@ def sort_array(s):
 			salida.append(e)
 	return salida
 
+
 # UTILIZANDO LOS RECURSOS PYTHON
 def ordena_array(arr):
   impares = sorted((x for x in arr if x%2 != 0), reverse=True)
@@ -31,7 +32,7 @@ def ordena_array(arr):
   return [x if x%2==0 else impares.pop() for x in arr]
 
   
-print(sort_array([5, 3, 2, 8, 1, 4])) #, [1, 3, 2, 8, 5, 4])
-print(sort_array([5, 3, 1, 8, 0]))    #, [1, 3, 5, 8, 0])
-print(sort_array([]))                 #,[])
+print(sort_array([5, 3, 2, 8, 1, 4])) 		#, [1, 3, 2, 8, 5, 4])
+print(sort_array([5, 3, 1, 8, 0]))    		#, [1, 3, 5, 8, 0])
+print(sort_array([]))                 		#,[])
 print(ordena_array([5, 3, 2, 8, 1, 4]))

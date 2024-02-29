@@ -1,0 +1,1 @@
+print("   >> Ejecutando script inicio.py dentro de directorio\n")
