@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
  
 # Enviar correo Gmail con Python   www.pythondiario.com
-
 from email.mime.text import MIMEText
 from smtplib import SMTP
+import getpass
+
  
 def main():
-	from_address = "ralleuc@gmail.com"
-	to_address = "javicu25@gmail.com"
+	to_address = str(input("Escriba correo destino: ")).lower().strip()
+	from_address = str(input("Escriba su correo: ")).lower().strip()
 	message = "Mensaje enviado desde python + javi"
 	mime_message = MIMEText(message)
 	mime_message["From"] = from_address
@@ -18,7 +19,8 @@ def main():
 	smtp.ehlo()
 	smtp.starttls()
 	smtp.ehlo()
-	smtp.login(from_address, "ccjavi50")
+	clave = getpass.getpass("Escriba su password: ").strip()
+	smtp.login(from_address, clave)
 	smtp.sendmail(from_address, to_address, mime_message.as_string())
 	smtp.quit()
 

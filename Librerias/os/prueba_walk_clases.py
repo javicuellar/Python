@@ -1,11 +1,11 @@
 import os
 
 class Fichero(object):
-	def __init__(self,r,n,e):
-	    self.ruta = r
-	    self.nombre = n
-	    self.extension = e
-	def nombre_completo(self):
+    def __init__(self, r, n, e):
+        self.ruta = r
+        self.nombre = n
+        self.extension = e
+    def nombre_completo(self):
 	    return str(self.ruta + os.sep + self.nombre + self.extension)
 
 class Directorio(Fichero):
@@ -23,11 +23,12 @@ class Directorio(Fichero):
 
     def nombre_completo(self):
 	    return str(self.ruta)
-
+    
     def listar_ficheros(self):
-	    print ('Ruta: ' + self.ruta)
-	    for f in self.ficheros:
+        print ('Ruta: ' + self.ruta)
+        for f in self.ficheros:
 	        print ('  --> ', f.nombre_completo())
+
 
 d = Directorio(os.getcwd())
 print (d.nombre_completo())

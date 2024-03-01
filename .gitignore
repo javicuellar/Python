@@ -7,8 +7,6 @@ App
 
 #  Carpeta Python antigua, hay que ir organizandola hasta eliminarla
 /Python*
-#  Ejemplos Python pendientes de organizar
-# /Ejemplos_Python/1_Sin_Clasificar
 
 # App  - Utilidades
 /App
@@ -20,4 +18,5 @@ App
 # Repositorios Clonados   
 /Repositorios*
 
-#  Ficheros
+#  archivos __pycache__
+**/__pycache__

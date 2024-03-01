@@ -1,6 +1,6 @@
 import sqlite3
 
-con = sqlite3.connect('pythondb.sqlite')        # conecta con la bd SQLite
+con = sqlite3.connect('pythondb.db')        # conecta con la bd SQLite
 
 
 def creatabla():
@@ -11,9 +11,6 @@ def creatabla():
     		 edad 		INTEGER)'''
 
     con.execute(query)
-
     con.commit()		# para actualizar cambios
-
     con.close()		    # cerrar base de datos
-
     return 'tabla creada.'

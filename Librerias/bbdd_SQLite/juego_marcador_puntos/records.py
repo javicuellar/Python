@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import sqlite3, time, os
 
 # La clase Records implementa un marcador muy sencillo para almacenar los
@@ -12,25 +10,22 @@ import sqlite3, time, os
 # no necesitarán usarlos; bastará que usen las funciones más intuitivas que
 # definimos aquí.
 
-class Records:
 
+class Records:
     def __init__(self):
-    
         # Lo primero es mirar si la base de datos existe ya. En tal caso se puede
         # usar pero, en caso contrario, hay que crearla. Esto, por supuesto,
         # ocurrirá la primera vez que se ejecute el programa.
         # Para ver si existe un archivo, lo más fácil es utilizar el módulo os
         # de python y su función path.exists
-        
-        if not os.path.exists('puntos.sql'):
+        if not os.path.exists('puntos.db'):
             
             # Vale. Si hemos llegado aquí es que la base no existe y hay que
             # crearla. Para ello usaremos la variable baseDatos y tendremos que
             # decirle a Python que va a ser una base de datos sqlite3, es decir,
             # 'conectarla'. El nombre del archivo que crearemos en el disco
-            # duro puede ser el que queramos. Vamos a llamarlo 'puntos.sql':
-            
-            self.baseDatos=sqlite3.connect('puntos.sql')
+            # duro puede ser el que queramos. Vamos a llamarlo 'puntos.db':
+            self.baseDatos=sqlite3.connect('puntos.db')
             
             # Una vez creado y conectado el archivo, hemos de decirle qué tipo
             # de datos contiene. Las bases de datos están formadas 'tablas' y en
@@ -49,25 +44,20 @@ class Records:
             # tablas se crean escribiendo 'create table' segudi del nombre de la
             # tabla y de los nombres de los tipos de campo de los registros con
             # sus respectivos tipos:
-            
             self.baseDatos.execute('''create table records
                         (nombre text, puntos int, fecha int)''')
         else:
-            
             # En el caso de que sí que exista la base de datos no hace falta
             # crearla, basta simplemente conectar con ella:
-            
-            self.baseDatos=sqlite3.connect('puntos.sql')
+            self.baseDatos=sqlite3.connect('puntos.db')
             
         # Con la base de datos ya en memoria, para poder manipularla necesitamos
         # un objeto conocido como 'cursor'. Es sobre él sobre quien se realizan
         # las consultas o las modificaciones. Lo vamos a almacenar en otra
         # propiedad, 'cursor'
-        
         self.cursor=self.baseDatos.cursor()
 
     def __del__(self):
-        
         # Éste es un método especial de Python. Igual que cuando se crea un
         # objeto se invoca automáticamente la función __init__ (conocida como
         # 'constructor'), cuando un objeto se elimina se invoca automáticamente
@@ -76,11 +66,9 @@ class Records:
         # deseamos que se ejecute cuando termine la vida del objeto. Con bases
         # de datos, aquí se suele llamar a la función close para cerrar la
         # conexión con el archivo del disco duro que contiene la base.
-        
         self.baseDatos.close()
 
     def listado(self):
-        
         # Esta función se encargará de devolver la lista de puntuaciones
         # almacenada. Con 'execute' hemos de pasarle al cursor de la base de
         # datos una cadena de texto con las instrucciones necesarias. En lenguaje
@@ -90,17 +78,14 @@ class Records:
         # tomamos los datos e incluso se puede ordenar los resultados con
         # la instrucción 'order'. Observa que para que salgan de mayor puntuación
         # a menor, añadimos 'desc' detrás:
-        
         self.cursor.execute('select * from records order by puntos desc')
         
         # Después de ejecutar la línea anterior, el cursor de la base de datos
         # contendrá todos los registros de la tabla 'records' ordenados de mayor
         # a menor según el campo 'puntos'.
-        
         return self.cursor
 
     def guardarPuntos(self, nombre, puntos):
-        
         # El objetivo de esta función es insertar en la base de datos un nuevo
         # registro que consiste en el nombre del jugador, los puntos que ha
         # obtenido y la fecha y hora en las que lo ha hecho. Los dos primeros
@@ -110,20 +95,16 @@ class Records:
         # número de segundos que han transcurrido desde una determinada fecha
         # fija de referencia. Éste es el valor que almacenaremos en la base de
         # datos, ya que Python tiene métodos para hacer la conversión inversa.
-        
         fecha = time.time()
         
         # En lenguaje SQL, para insertar registros en una tabla se escribe
         # 'insert into' seguido del nombre de la tabla. Además, para indicar
         # los valores que se van a insertar, hay que añadir 'values' y, entre
         # paréntesis, los valores en cuestión (el nombre, los puntos y la fecha).
-        
         self.cursor.execute('''insert into records
                     values (\'%s\',\'%s\',\'%s\')''' % (nombre,puntos,fecha))
                     
         # Finalmente, para que el cambio tenga lugar de forma efectiva, se usa
         # el comando 'commit' (se hace así por si se produce un error o alguna
         # otra modificación y garantizar que la base no quede corrupta).
-        
         self.baseDatos.commit()
-

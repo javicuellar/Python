@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 
 
@@ -47,14 +45,13 @@ print (ruta2, '\n', '*'*70)
 ruta2 = leer_dir_walk(ruta2)
 
 
-
 # PRUEBA CON FUNCION LEER_RUTA para exportar a nuestro proyecto
 def leer_ruta(ruta):
 	er = ''
 	archivos, directorios = [], []
 	for (path,directorios,archivos) in os.walk(ruta, onerror=control_error):
 		break
-	print ('  --> ', err.strerror)
+	# print ('  --> ', err.strerror)
 	if er == '':
 		for i in range(len(directorios)):
 			directorios[i] = os.path.join(path, directorios[i])
@@ -88,27 +85,3 @@ for ar in files:
 for dir in dirs:
 	num_dir += 1
 	print (num_dir, '>  dir> ', dir)
-
-
-
-# PRUEBA CON OS.LISTDIR  (con error de acceso denegado)
-'''
-def leer_dir_listdir(ruta):
-	num_ar, salida = 0, ''
-	for file in os.listdir(ruta):
-		pathname = os.path.join(ruta, file)
-		num_ar += 1
-		print (num_ar, '> ', pathname)
-		if num_ar == 2:
-			salida = os.path.join(path, dir)
-	return salida
-	
-# prueba sacar el directorio con OS.LISTDIR (con displays)
-print ('-'*80)
-ruta2 = leer_dir_listdir(ruta)
-
-# prueba sacar directorio con ACCESO DENEGADO con OS.LISTDIR (con displays)  --->  ERROR
-print ('\n')
-print ('-'*80)
-ruta2 = leer_dir_listdir(ruta2)
-'''
