@@ -1,26 +1,21 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-#  M骴ulo para el an醠isis de datos de los valores de las acciones
-#
-#    - Media(lista).- Calcula la media de los valores de la lista
+#    M贸dulo para el an谩lisis de datos de los valores de las acciones
+#      - Media(lista).- Calcula la media de los valores de la lista
 
 
 import Tiempos.medirtiempos as tiempo
-#  Usamos el m骴ulo medirtiempos para conocer el rendimiento de los accesos a ficheros y tablas (y an醠isis)
+#  Usamos el m贸dulo medirtiempos para conocer el rendimiento de los accesos a ficheros y tablas (y an谩lisis)
 #
 #    - Inicio().- Recupera la hora de inicio
-#    - Duraci髇(inicio).- Devuelve el tiempo transcurrido en segundos desde el par醡etro inicio hasta la hora actual.
+#    - Duraci贸n(inicio).- Devuelve el tiempo transcurrido en segundos desde el par谩metro inicio hasta la hora actual.
 #    - DisplayFecha(fecha).- Convierte un string AAAA/MM/DD a string DD/MM/AAAA
-#    - EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est醤 en la misma semana
+#    - EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est锟絥 en la misma semana
 
 
 
-
-#  Funci髇 Analisis(valores).- Muestra un an醠isis de todas las acciones del diccionario
+#  Funci贸n Analisis(valores).- Muestra un an谩lisis de todas las acciones del diccionario
 def Analisis(valores):
 	for accion in valores.keys():
-		# Cabeceras por acc韔n de la cartera 
+		# Cabeceras por acc贸on de la cartera 
 		print ('\n','\n','*********************')
 		print ("Analisis de: ", accion,'\n')
 		
@@ -51,7 +46,6 @@ def Analisis(valores):
 
 
 
-#  Funci髇 Media(lista).- Calcula la media de los valores de la lista
+#  Funci贸n Media(lista).- Calcula la media de los valores de la lista
 def Media(lista):
 	return sum(lista)/len(lista)
-

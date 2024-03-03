@@ -1,10 +1,9 @@
-#  M骴ulo de gesti髇 del tiempo de ejecuci髇, sirve principalmente para medir el rendimiento
-#
-#		Utiliza el m骴ulo time para recuperar la hora
+#  M贸dulo de gesti贸n del tiempo de ejecuci贸n, sirve principalmente para medir el rendimiento
+#		Utiliza el m贸dulo time para recuperar la hora
 from time import time	   
 
 #    - Hora().- Recupera la hora actual
-#    - Duraci髇(inicio).- Calcula el tiempo transcurrido, en segundos, desde "inicio" hasta la hora actual
+#    - Duraci贸n(inicio).- Calcula el tiempo transcurrido, en segundos, desde "inicio" hasta la hora actual
 
 
 # from datetime import datetime, date, time, timedelta
@@ -13,7 +12,7 @@ from datetime import datetime
 #    - Fecha(fecha).- Convierte un string DD/MM/AAAA a fecha en formato datetime
 #    - FormatearFecha(fecha).- Convierte un string DD/MM/AAAA a string AAAA/MM/DD
 #    - DisplayFecha(fecha).- Convierte un string AAAA/MM/DD a string DD/MM/AAAA
-#    - EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est醤 en la misma semana
+#    - EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est谩n en la misma semana
 
 # import calendar
 
@@ -25,41 +24,42 @@ formatoaaaammdd = "%Y/%m/%d"
 formatonumsemana = "%W"
 
 
-#  Funci髇 Hora().- Devuelve la hora actual utilizando el m骴ulo time.
+#  Funci贸n Hora().- Devuelve la hora actual utilizando el m贸dulo time.
 def Hora():
 	return time() 		
 
 
-#  Funci髇 Duracion(inicio).- Devuelve los segundos transcurridos desde el par醡etro de entrada inicio hasta la hora actual
+#  Funci贸n Duracion(inicio).- Devuelve los segundos transcurridos desde el par谩metro de entrada inicio hasta la hora actual
 def Duracion(inicio):
 	tiempo_final = time()
 	return tiempo_final - inicio
 
 
 
-#  Funci髇 Fecha(fecha).- Convierte un string DD/MM/AAAA a fecha en formato datetime
+#  Funci贸n Fecha(fecha).- Convierte un string DD/MM/AAAA a fecha en formato datetime
 def Fecha(fecha):
 	return datetime.strptime(fecha, formatoaaaammdd)
 
 	
 
-#  Funci髇 FormatearFecha(fecha).- Convierte un string DD/MM/AAAA a string AAAA/MM/DD
+#  Funci贸n FormatearFecha(fecha).- Convierte un string DD/MM/AAAA a string AAAA/MM/DD
 def FormatearFecha(fecha):
 	return datetime.strptime(fecha, formatofecha).strftime(formatoaaaammdd)
 
 
 	
-#  Funci髇 DisplayFecha(fecha).- Convierte un string AAAA/MM/DD a string DD/MM/AAAA
+#  Funci贸n DisplayFecha(fecha).- Convierte un string AAAA/MM/DD a string DD/MM/AAAA
 def DisplayFecha(fecha):
 	return datetime.strptime(fecha, formatoaaaammdd).strftime(formatofecha)
 
 
 
-#  Funci髇 EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est醤 en la misma semana
+#  Funci贸n EnlamismaSemana(fecha1,fecha2).- Devuelve True si las dos fechas est锟絥 en la misma semana
 def EnlamismaSemana(fecha1,fecha2):
 	fecha_date1, fecha_date2 = Fecha(fecha1), Fecha(fecha2)
 	if fecha_date1.strftime(formatonumsemana) == fecha_date2.strftime(formatonumsemana):
 		return True
 	else:
 		return False
-	#print("Fecha: ", fecha, datetime.isocalendar(fecha_datetime))
+
+# print("Fecha: ", fecha, datetime.isocalendar(fecha_datetime))

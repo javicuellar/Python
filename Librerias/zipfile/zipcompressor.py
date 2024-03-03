@@ -4,11 +4,11 @@
 #       zipcompressor.py
 #       
 #       Copyright 2013 Recursos Python - www.recursospython.com
-#       
-#       
+
 from os.path import dirname, exists
 from sys import argv
 from zipfile import BadZipfile, ZipFile
+
 
 PATH = dirname(__file__)
 
@@ -23,7 +23,7 @@ def decompress(filename, pwd=None):
         try:
             f.extractall(PATH, pwd=pwd)
         except RuntimeError:
-            pwd = raw_input("Clave para %s: " % filename)
+            pwd = input("Clave para %s: " % filename)
             decompress(filename, pwd=pwd)
 
 def main():
@@ -37,9 +37,10 @@ def main():
                 except BadZipfile:
                     compress(filename)
             else:
-                print "No se ha encontrado %s." % filename
+                print("No se ha encontrado %s." % filename)
     else:
-        print u"No se ha encontrado ningún archivo."
-       
+        print(u"No se ha encontrado ningÃºn archivo.")
+
+
 if __name__ == "__main__":
     main()
