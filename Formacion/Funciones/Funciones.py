@@ -1,20 +1,21 @@
 # ================================================================================================
 #    Funciones
 # ================================================================================================
-def is_even(x):         # is_even = es divisible entre 2
+# is_even = es divisible entre 2
+def is_even(x=1):           # si x no viene informado toma por defecto el valor 1
     if x % 2 == 0:
         return True
     else:
         return False
 
 # --------------------------------------------------------------------------------
-def factorial(x):       # funcion recursiva
+def factorial(x):           # funcion recursiva
     if x <= 0:
         return 0
     elif x == 1:
         return 1
     else:
-        return x * factorial(x-1)
+        return x * factorial(x-1)   # Llama recursivamente hasta que x es menor que 2
 
 # --------------------------------------------------------------------------------
 def is_prime(x):       	# primo si es positivo mayor que uno y 
