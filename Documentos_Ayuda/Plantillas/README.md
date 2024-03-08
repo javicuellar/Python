@@ -1,7 +1,5 @@
 # Título -> ## Subtítulo  ->  ### Subsubtítulo
 
-Presentación 
-
 * Autor: Nombre
 * Release: Versión
 * Fecha última actualización: dd/mm/aaaa
@@ -9,9 +7,9 @@ Presentación
 
 <hr> barra separadora
 
+
 Presentación del proyecto Github....
 
-Contenido:
 
 ### Contenido 1
 
@@ -22,7 +20,9 @@ Descripción....
 
 `Nota: Creación de notas explicativas.`
 
+
 <hr>  barra separadora
+
 
 ## Explicar como usar el proyecto: entornos virtuales, paquetes instalados, etc.
 
