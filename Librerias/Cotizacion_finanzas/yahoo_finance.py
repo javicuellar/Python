@@ -1,9 +1,11 @@
 import pandas
 import numpy
-import talib
+# instalacion:  pip install ta-lib   (necesita Microsoft Visual C++ 14.0 o superior)
+# import talib
 
 import matplotlib.pyplot as plt
 
+ # No funciona, desinstalo la librería
 from yahoo_finance import Share
 
 s = Share('BIMBOA.MX')

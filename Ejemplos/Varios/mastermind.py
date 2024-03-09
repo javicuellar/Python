@@ -1,6 +1,4 @@
-﻿# -*- coding: utf-8 -*-
-
-# Módulo que permite elegir números aleatoriamente
+﻿#   Módulo que permite elegir números aleatoriamente
 import random
 
 # Conjunto de símbolos válidos en el código a descubrir.

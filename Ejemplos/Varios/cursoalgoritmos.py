@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """ Un programa sencillo, para calcular cuadrados de numeros """
 
 def main():

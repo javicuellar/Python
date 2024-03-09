@@ -1,4 +1,4 @@
-########  PredicciÛn de Acciones (Bolsa Mexicana de Valores)  ########
+########  Predicci√≥n de Acciones (Bolsa Mexicana de Valores)  ########
 
 import os
 import sys
@@ -10,7 +10,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from textblob import TextBlob
 
-# Entramos a Twitter vÌa API
+# Entramos a Twitter v√≠a API
 consumer_key = ''
 consumer_secret = ''
 access_token = ''
@@ -19,7 +19,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 user = tweepy.API(auth)
 
-# AquÌ guardaremos el archivo en un csv
+# Aqu√≠ guardaremos el archivo en un csv
 FILE_NAME = 'historical.csv'
 
 # Para ver lo que se opina del corporativo (Como ejemplo tomamos Cemex)
@@ -27,15 +27,15 @@ FILE_NAME = 'historical.csv'
 list_of_tweets = user.search('#cemex')
 
 for tweet in list_of_tweets:
-    print tweet.text
+    print(tweet.text)
     analysis = TextBlob(tweet.text)
-    print analysis.sentiment
+    print(analysis.sentiment)
 
 
 def stock_sentiment(quote, num_tweets):
     # Comprueba si el sentimiento de nuestra consulta es
     # positivo o negativo, regresa True si la
-    # mayorÌa de tweets v·lidos tienen un sentimiento positivo
+    # mayor√≠a de tweets v√°lidos tienen un sentimiento positivo
     list_of_tweets = user.search(quote, count=num_tweets)
     positive, null = 0, 0
 
@@ -55,7 +55,7 @@ def stock_sentiment(quote, num_tweets):
 stock_sentiment('cemex', 50)
 
 def get_historical(quote):
-    # Descarga el histÛrico de google finance
+    # Descarga el hist√≥rico de google finance
     url = 'http://www.google.com/finance/historical?q=BMV%3A'+quote+'&output=csv'
     r = requests.get(url, stream=True)
 
@@ -63,12 +63,10 @@ def get_historical(quote):
         with open(FILE_NAME, 'wb') as f:
             for chunk in r:
                 f.write(chunk)
-
         return True
 
 
 def stock_prediction():
-
     # Recolecta los datos del archivo csv
     dataset = []
 
@@ -93,28 +91,29 @@ def stock_prediction():
     model.compile(loss='mean_squared_error', optimizer='adam')
     model.fit(trainX, trainY, nb_epoch=200, batch_size=2, verbose=2)
 
-    # Nuestra prediction al dÌa de maÒana
+    #  Nuestra prediction al d√≠a de ma√±ana
     prediction = model.predict(np.array([dataset[0]]))
-    result = 'El precio se mover· entre %s y %s' % (dataset[0], prediction[0][0])
-
+    result = 'El precio se mover√° entre %s y %s' % (dataset[0], prediction[0][0])
     return result
 
-# Para predecir el rango de precios de cualquier acciÛn registrada en la BMV:
 
-# Preguntar al usuario la consulta de una acciÛn a predecir
-stock_quote = raw_input('Ingrese el nombre de la acciÛn en formato BMV que desea predecir (ej: CEMEXCPO, ELEKTRA, ALSEA): ').upper()
-# Comprueba si el sentimiento de la acciÛn es positivo
+# Para predecir el rango de precios de cualquier acci√≥n registrada en la BMV:
+
+# Preguntar al usuario la consulta de una acci√≥n a predecir
+stock_quote = input('Ingrese el nombre de la acci√≥n en formato BMV que desea predecir (ej: CEMEXCPO, ELEKTRA, ALSEA): ').upper()
+
+# Comprueba si el sentimiento de la acci√≥n es positivo
 if not stock_sentiment(stock_quote, num_tweets=100):
-    print 'La acciÛn tiene sentimiento negativo, por favor corra de nuevo el cÛdigo para otra acciÛn'
+    print('La acci√≥n tiene sentimiento negativo, por favor ejecute de nuevo el c√≥digo para otra acci√≥n')
     sys.exit()
-# Verifica si existe o no el histÛrico
+# Verifica si existe o no el hist√≥rico
 if not get_historical(stock_quote):
-    print 'Google regresÛ un 404, por favor corra de nuevo el cÛdigo'
-    print 'ingrese una acciÛn v·lida en el formato BMV'
+    print('Google regres√≥ un 404, por favor ejecute de nuevo el c√≥digo')
+    print('ingrese una acci√≥n v√°lida en el formato BMV')
     sys.exit()
-# Tenemos el histÛrico asÌ que creamos la red neuronal y obtenemos la predicciÛn
-print stock_prediction()
+# Tenemos el hist√≥rico as√≠ que creamos la red neuronal y obtenemos la predicci√≥n
+print(stock_prediction())
 
 
-# Hemos terminado asÌ que procedemos a borrar el archivo csv
+# Hemos terminado as√≠ que procedemos a borrar el archivo csv
 os.remove(FILE_NAME)
