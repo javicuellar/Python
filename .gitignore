@@ -15,6 +15,9 @@ App
 /Documentos_Ayuda/Libros
 /Documentos_Ayuda/Video*
 
+# Proyectos python
+/Proyectos
+
 # Repositorios Clonados   
 /Repositorios*
 

@@ -2,6 +2,8 @@
 
 ### Ejemplos scripts Python
 
+* **Bloc notas Tkinter** - Bloc de notas usando el GUI Tkinter
+
 * **Buscar ficheros duplicados** - Script para buscar duplicados que usa múltiples librerías `hashlib`, `multiprocessing`, `queue`, `logging`, `sys`, `threading con bloqueo, Lock`
 
 * **Leer acciones de fichero csv y grabar en SQLite**

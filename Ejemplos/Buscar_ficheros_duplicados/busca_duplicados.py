@@ -1,3 +1,24 @@
+#  Buscador multiplataforma de archivos iguales
+#  https://recursospython.com/codigos-de-fuente/buscador-de-archivos-iguales/
+
+#   Un simple pero eficaz script para encontrar todos los archivos dobles o multiplicados
+#  en el disco. Permite especificar una ruta al comenzar (C:/, por ejemplo) y luego recorre
+#  el árbol entero de directorios con la función os.walk(). Compara los archivos luego de obtener
+#  el hash de cada uno de ellos con el algoritmo MD5 vía el módulo estándar hashlib. Esto posibilita
+#  tratar con archivos de todos los tamaños, sin hacer diferencia, en cadenas hexadecimales de 32
+#  caracteres. Además, permite que el programa calcule con gran precisión: dos archivos con el mismo nombre
+#  y tamaño pueden ser completamente diferentes. Al finalizar, los resultados son desplegados en un archivo
+#  de texto output.txt. Si el proceso es detenido por el usuario (CTRL + C en Windows o CTRL + D en Linux),
+#  se muestran los resultados de los archivos procesados hasta el momento. Para directorios que incluyan
+#  gran cantidad de archivos y carpetas el proceso puede ser considerablemente duradero.
+
+#   Para iniciar el programa debe especificarse una ruta de raíz de la siguiente forma:
+#  python dupsearch.py ruta
+
+#   Actualización 02/11/2015: optimización del código e implementación de múltiples hilos de acuerdo a la
+#  cantidad de núcleos del procesador para un mejor rendimiento.
+
+
 from __future__ import print_function
 from hashlib import md5
 from multiprocessing import cpu_count
