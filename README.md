@@ -29,9 +29,11 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
 - [Python Data Structures Cheat Sheet for Beginners and Experts](https://morioh.com/a/5d7544234050/python-data-structures-cheat-sheet-for-beginners-and-experts)
 - [Python Tutorial](https://morioh.com/a/b0a0843ff9b1/build-an-interactive-analytics-dashboard-website-using-python?s=03)
 
+
 - [Python pelis](https://github.com/Hircinelt/IMDB/issues/4)
 - [Repositorio Git Retos de programación](https://github.com/mouredev/retos-programacion-2023)
 - [Python Django gestión de proyectos](https://morioh.com/a/0143a3147843/build-a-simple-project-management-system-from-scratch-using-django?s=03)
+
 
 - [Modern GUI in Python - FLET](https://morioh.com/a/b8f5213477ad/build-modern-graphical-user-interfaces-in-python-with-flet)
 
