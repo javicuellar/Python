@@ -28,9 +28,13 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
 - [Python con Excel](https://morioh.com/a/a97aefa3f174/how-to-automate-excel-with-python-or-replace-vba-with-python?s=03)
 - [Python Data Structures Cheat Sheet for Beginners and Experts](https://morioh.com/a/5d7544234050/python-data-structures-cheat-sheet-for-beginners-and-experts)
 - [Python Tutorial](https://morioh.com/a/b0a0843ff9b1/build-an-interactive-analytics-dashboard-website-using-python?s=03)
+- [11 Tips And Tricks To Write Better Python Code](https://morioh.com/a/f332ff09290c/11-tips-and-tricks-to-write-better-python-code)
+- [18 Python Scripts to Speed Up Your Coding](https://morioh.com/a/4f4b74ba17cc/18-python-scripts-that-help-you-write-code-faster)
+
 
   Otros enlaces interesantes
 
+- [Python pelis](https://github.com/AnthonyBloomer/tmdbv3api/blob/master/README.rst)
 - [Python pelis](https://github.com/Hircinelt/IMDB/issues/4)
 - [Repositorio Git Retos de programación](https://github.com/mouredev/retos-programacion-2023)
 - [Python Django gestión de proyectos](https://morioh.com/a/0143a3147843/build-a-simple-project-management-system-from-scratch-using-django?s=03)
