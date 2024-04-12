@@ -3,10 +3,19 @@ from pytube import YouTube
 
 def descargar_video(link):
     yt = YouTube(link)
-    yt = yt.streams.get_highest_resolution()
+    print(" -- Información video Youtube  --")
+    print("Título: ", yt.title)
+    print("Descripción: ", yt.description)
+    print("Tamaño:  ", yt.length // 60, "min.", yt.length % 60, "seg.")
+    print("Metadata: ", yt.metadata)
+    print("Fecha publicación:  ", yt.publish_date)
+    print("Puntuación:  ", yt.rating)
+    print("Se ha visto ", yt.views, " veces.")
+    
+    ytStream = yt.streams.get_highest_resolution()
 
     try:
-        yt.download()
+        ytStream.download(skip_existing=True)
     except:
         print("Ha habido un problema con la descarga.")
     

@@ -24,6 +24,9 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
   Enlaces interesantes para leer y revisar.
 
 - [Python - usar 4 líneas para combinar muchos ficheros CSV](https://twitter.com/TomMitchellData/status/1766523617280454702?t=j7LYIITv3wg-GIBdi-_xtw&s=03)
+- [Reconocimiento facial con deep learning y python](https://cienciadedatos.net/documentos/py34-reconocimiento-facial-deeplearning-python)
+- [scrape multiple web pages using BeautifulSoup and export the results to a CSV files using Pandas Library](https://morioh.com/a/13dfb167ef80/how-to-scrape-multiple-web-pages-to-csv-using-beautifulsoup?s=03)
+- [GitHub - ageitgey/face_recognition en hackernoon.com](https://github.com/ageitgey/face_recognition)
 - [Python fechas](https://majornetwork.net/2024/02/datetimes-with-timezones-in-python/?s=03)
 - [Python con Excel](https://morioh.com/a/a97aefa3f174/how-to-automate-excel-with-python-or-replace-vba-with-python?s=03)
 - [Python Data Structures Cheat Sheet for Beginners and Experts](https://morioh.com/a/5d7544234050/python-data-structures-cheat-sheet-for-beginners-and-experts)
@@ -53,15 +56,14 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
     [Otra David](https://github.com/davidbombal/red-python-scripts/tree/main?s=03)
 - [15 repositorios de GitHub que deberías tener siempre a la mano](https://platzi.com/blog/15-repositorios-de-github-que-deberias-tener-siempre-a-la-mano/)
 - [50 proyectos populares de código abierto de Python en GitHub en 2018 | HackerNoon](https://hackernoon.com/50-popular-python-open-source-projects-on-github-in-2018-c750f9bf56a0)
-- [GitHub - ageitgey/face_recognition en hackernoon.com](https://github.com/ageitgey/face_recognition)
 
 
   Proyectos a mirar
 
 - [Modern GUI in Python - FLET](https://morioh.com/a/b8f5213477ad/build-modern-graphical-user-interfaces-in-python-with-flet)
 - [NeuralNine (NeuralNine) / Repositorios · GitHub](https://github.com/NeuralNine?tab=repositories)
-- [Git Cheatsheet: The Most Essential Git Commands](https://morioh.com/a/68bbb7e5b5dd/git-cheatsheet-the-most-essential-git-commands)
 
 ### Otros enlaces
 
 - [Sitios de la Dark Web para Explorar - post X](https://twitter.com/IA_Quijote/status/1759993091165937716?t=v_douB2nOSeufkNAuMJyPw&s=03)
+- [Git Cheatsheet: The Most Essential Git Commands](https://morioh.com/a/68bbb7e5b5dd/git-cheatsheet-the-most-essential-git-commands)
