@@ -23,7 +23,6 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
 
   Enlaces interesantes para leer y revisar.
 
-- [Python - usar 4 líneas para combinar muchos ficheros CSV](https://twitter.com/TomMitchellData/status/1766523617280454702?t=j7LYIITv3wg-GIBdi-_xtw&s=03)
 - [Reconocimiento facial con deep learning y python](https://cienciadedatos.net/documentos/py34-reconocimiento-facial-deeplearning-python)
 - [scrape multiple web pages using BeautifulSoup and export the results to a CSV files using Pandas Library](https://morioh.com/a/13dfb167ef80/how-to-scrape-multiple-web-pages-to-csv-using-beautifulsoup?s=03)
 - [GitHub - ageitgey/face_recognition en hackernoon.com](https://github.com/ageitgey/face_recognition)

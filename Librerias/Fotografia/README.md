@@ -3,7 +3,6 @@
 
 ### Enlaces de interes consultados
 
-- [Python - usar 4 líneas para combinar muchos ficheros CSV](https://twitter.com/TomMitchellData/status/1766523617280454702?t=j7LYIITv3wg-GIBdi-_xtw&s=03)
 - [Reconocimiento facial con deep learning y python](https://cienciadedatos.net/documentos/py34-reconocimiento-facial-deeplearning-python)
 
 
