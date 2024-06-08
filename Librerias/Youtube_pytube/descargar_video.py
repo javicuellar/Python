@@ -2,6 +2,9 @@ from pytube import YouTube
 
 
 def descargar_video(link):
+    from pytube.innertube import _default_clients
+    _default_clients["ANDROID_MUSIC"] = _default_clients["WEB"]
+    
     yt = YouTube(link)
     print(" -- Información video Youtube  --")
     print("Título: ", yt.title)
@@ -22,7 +25,8 @@ def descargar_video(link):
     print("Descarga realizada correctamente.")
 
 
-link = input("l descargar: ")
+
+link = input("Video a descargar: ")
 
 #  Descargamos el video
 descargar_video(link)

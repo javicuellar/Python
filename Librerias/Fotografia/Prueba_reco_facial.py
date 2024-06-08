@@ -1,6 +1,7 @@
 from Reconocimiento_facial import *
 
 
+
 # Descarga de las imágenes de referencia
 # ==============================================================================
 def Descarga_imagenes():
