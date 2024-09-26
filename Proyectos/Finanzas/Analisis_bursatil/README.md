@@ -12,7 +12,6 @@ haciendolo para el español) y analizar para detectar acciones que van a subir o
 
 
 ### Funcionalidades en curso
-----------------------------
 
 * Grabar dataframe en CSV, para ello incorporar columna Activo (ticker) y unir los dataframes de todos los activos.
 
@@ -20,6 +19,7 @@ haciendolo para el español) y analizar para detectar acciones que van a subir o
 
 
 ### Referencias para el proyecto
+----------------------------
 
 * [Búsqueda google: python calcular rentabilidad acciones anual](https://www.google.com/search?q=python+calcular+rentabilidad+acciones+anual&sca_esv=23275d10bb72eb94&sca_upv=1&rlz=1C9BKJA_enES796ES797&hl=es&sxsrf=ADLYWIIVh6TJw-Ebns1UDewtwlYg0shpZg%3A1717960980838&ei=FAFmZq_nMrKkkdUP07izIQ&oq=python+calcular+rentabilidad+acciones+anua&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIipweXRob24gY2FsY3VsYXIgcmVudGFiaWxpZGFkIGFjY2lvbmVzIGFudWEqAggAMgUQIRigATIFECEYnwUyBRAhGJ8FSOQ0ULkLWOwecAB4AJABAJgB_wSgAeYOqgEHMC41LjUtMrgBAcgBAPgBAZgCB6AChg_CAgsQABiwAxiiBBiJBcICCxAAGIAEGLADGKIEwgIEECEYFZgDAIgGAZAGBJIHBzAuNS41LTKgB6AY&sclient=mobile-gws-wiz-serp)
 
@@ -27,7 +27,6 @@ haciendolo para el español) y analizar para detectar acciones que van a subir o
 * [Estrategia: Algoritmo de inversión 4días: análisis detallado de una idea rentable](https://slowinver.com/algoritmo-de-inversion-4-dias/)
 * [Trabajo para Matemática financiera: Optimización de cartera de acciones con python](https://drive.google.com/file/d/1dofoJuKGaNtVFDjFuftBzlek4PoF-qJK/view)
 
-* [Linkedin - Optimiza tu cartera de inversión con Python](https://www.linkedin.com/pulse/optimiza-tu-cartera-de-inversión-con-python-rodrigo-garcía-ruiz/)
 * [Calcular la beta de una acción con python](https://amarjen.github.io/calcular-beta-python.html)
 * [Rankia - Momentum como método de inversión con Python (Parte 1)](https://www.rankia.com/blog/finanzas-dato/4733791-momentum-como-metodo-inversion-python-parte-1)
 * [Github - Análisis Financiero con python](https://github.com/MarioDR09/An-lisis-financiero-con-Python/tree/master)
