@@ -4,17 +4,21 @@ Ejemplos de casos de uso de librerías `Python`.
 
 ### Repositorio de usos de Librerías Python
 
-* **BBDD Oracle** - Conexión a bbdd y ejemplos SQL
-* **BBDD SQLite** - Conexión a bbdd y ejemplos SQL
-* **getpass** - Solicitud de entrada por teclado de password sin visualizarse
-* **numpy**
-* **os** - Comandos del sistema, tratamiento de ficheros
-* **pathlib** - Tratamiento de rutas de ficheros
-* **smtplib y email** - Envío de correos
-* **socket**
+* **BBDD SQLite y Oracle** - Conexión a bbdd y ejemplos SQL
+* **Cotizacion_finanzas** - Pandas_datareader, requests_google.com, yahoo_finance, yfinance.
+* **data_science** - Keras, numpy, pandas.
+* **encriptar** - getpass: Solicitud de entrada por teclado de password sin visualizarse y librerías encriptar.
+* **Excel_Google_sheets** - openpyxl, gspread, pygsheets.
+* **Imagen_foto_video** - exitool, pyexiv2, reconocimiento facial.
+* **PDF_files** - múltiples librerías para convertir y extraer información de pdfs.
+* **Películas** - IMDbPY y tmdb_python.
+* **Posicionamiento_GPS** - folium
+* **Servidor_FTP_SMB** - ftplib, SFTP, SMB.
+* **Sistema_os_pathlib_psutil** - os (comandos del sistema), pathlib, psutil, limitar memoria.
+* **smtplib_email** - Envío de correos
 * **sys** - Tratamiento de argumentos de ejecución
 * **Thread** - Tratamiento de hilos de ejecución
-* **time y datetime** - Tratamiento de fechas
-* **beautifulSoap** - Análisis de web (scraping)
-* **urllib** - Lectura de páginas web
+* **time_datetime** - Tratamiento de fechas
+* **Web** - Análisis de web (scraping). beautifulSoap, socket, urllib.request
+* **Youtube** - pytube para descargar videos de youtube
 * **zipfile** - Compresión, descompresión de ficheros
