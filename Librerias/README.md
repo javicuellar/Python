@@ -15,8 +15,10 @@ Ejemplos de casos de uso de librerías `Python`.
 * **Posicionamiento_GPS** - folium
 * **Servidor_FTP_SMB** - ftplib, SFTP, SMB.
 * **Sistema_os_pathlib_psutil** - os (comandos del sistema), pathlib, psutil, limitar memoria.
+    * pickle - Manejo de ficheros binarios
 * **smtplib_email** - Envío de correos
 * **sys** - Tratamiento de argumentos de ejecución
+* **Test_codigo** - Librería doctest para testear código (pruebas de funciones)
 * **Thread** - Tratamiento de hilos de ejecución
 * **time_datetime** - Tratamiento de fechas
 * **Web** - Análisis de web (scraping). beautifulSoap, socket, urllib.request
