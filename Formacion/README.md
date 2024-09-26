@@ -11,5 +11,6 @@ Scripts de ejemplos `Python` de formación.
 * **Ficheros** - Ejemplos de uso de ficheros en python
 * **Flujos White For** - Flujos, bucles white y for en python
 * **Funciiones** - Ejemplos de definición de funciones python
+* **Kivy** - Ejemplos de un pequeño tutorial
 
 * **Ejemplos** - Varios ejemplos de scripts python, se pueden ejecutar desde el script "ejecutar_scripts_directorio.py"
