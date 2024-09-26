@@ -1,4 +1,4 @@
 #  No llebamos a la nube las fotos personales
-./__pycache__/*.*
-./Fotos/*.*
-./Fotos_Cara/*.*
+./__pycache__
+./Fotos
+./Fotos_Cara
