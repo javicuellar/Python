@@ -9,6 +9,8 @@
 <body>
     <header>
         <h1>Usuarios Registrados</h1>
+        <p>Usuario conectado: {{ usuario_cookie }} {{ msg_usuario }}</p>
+        <p>User-Agent: {{ user_agent }}</p>
     </header>
     <div class="container">
         <a href="{{ url_for('register') }}">Registrar Nuevo Usuario</a>
@@ -23,6 +25,8 @@
                 </li>
             {% endfor %}
         </ul>
+        <button id="get-variable-button">Obtener Variable</button>
+        <div id="result"></div>
         <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
     </div>
 </body>

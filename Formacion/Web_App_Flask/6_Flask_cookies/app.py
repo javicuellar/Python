@@ -20,6 +20,10 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
+# varialbe global
+contador = 0
+msg_usuario = 'Acceso: '
+
 
 class Usuario(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -27,11 +31,12 @@ class Usuario(db.Model, UserMixin):
     password = db.Column(db.String(150), nullable=False)
 
 
-
+''' Bloque quitado para pruebas en PC 
 @app.before_request
 def before_request():
     if request.scheme != 'https':
         return redirect(request.url.replace('http://', 'https://'))
+'''
 
 
 @login_manager.user_loader
@@ -41,13 +46,28 @@ def load_user(user_id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    global contador
+    global msg_usuario
+
     if request.method == 'POST':
+        contador += 1
+
         username = request.form['username']
         password = request.form['password']
         usuario = Usuario.query.filter_by(username=username, password=password).first()
         if usuario:
             login_user(usuario)
-            return redirect(url_for('usuarios'))
+            # return redirect(url_for('usuarios'))
+            # Grabar cookie con el nombre de usuario
+            resp = make_response(redirect(url_for('usuarios')))
+            resp.set_cookie('usuario', username)
+            usuario_cookie = request.cookies.get('Otro_usuario')
+            if usuario_cookie == username:
+                msg_usuario = 'Otra vez por aquí. Acceso: '
+            else:
+                msg_usuario = 'Acceso: '
+                resp.set_cookie('Otro_usuario', username)
+            return resp
         else:
             flash('Credenciales incorrectas.')
     return render_template('login.html')
@@ -69,8 +89,18 @@ def register():
 @app.route('/usuarios')
 @login_required
 def usuarios():
+    global msg_usuario
+    global contador
+
     usuarios = Usuario.query.all()
-    return render_template('users.html', usuarios=usuarios)
+    # return render_template('users.html', usuarios=usuarios)
+    # Leer cookie de usuario
+    usuario_cookie = request.cookies.get('usuario')   
+    # Obtener el User-Agent
+    user_agent = request.headers.get('User-Agent')
+    # Puedes hacer un parseo del User-Agent si es necesario
+    return render_template('users.html', usuarios=usuarios, usuario_cookie=usuario_cookie, 
+                           msg_usuario=msg_usuario + str(contador), user_agent=user_agent)
 
 
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
@@ -100,10 +130,17 @@ def delete_user(id):
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    # return redirect(url_for('login'))
+    resp = make_response(redirect(url_for('login')))
+    resp.set_cookie('usuario', '', expires=0)           # Eliminar la cookie al cerrar sesión
+    return resp
 
 
 
+
+# * Se añade el tratamiento de las cookies
+# * Se recupera User-Agent - información de sistema operativo del navegador
+#     user_agent = request.headers.get('User-Agent')
 
 if __name__ == '__main__':
     with app.app_context():
