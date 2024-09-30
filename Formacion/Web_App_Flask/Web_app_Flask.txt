@@ -1,0 +1,8 @@
+
+6. Ejemplo de grabación y lectura de cookies
+
+    Cookies - Almacena en el disco duro de la persona que visita la página. 
+        Puede ser recuperado en siguientes visitas.
+        Funciones:
+            - Recordar acceso y actuar en consecuencia
+            - Conocer información, hábitos de navigación, intentos de spyware (publicidad), etc.

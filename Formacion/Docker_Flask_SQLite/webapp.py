@@ -99,8 +99,10 @@ def logout():
 
 
 
-
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()         # Crea la base de datos
-    app.run(debug=True)         # En el navegador -> http://localhost:5000/login  o  http://127.0.0.1:5000/login
+
+    # En el navegador -> http://javicu.synology.me:5010/login  o  http://192.168.1.41:5010/login
+    app.run(host="192.168.1.41", port=5010, debug=True)
+    # no poner como host "javicu.synology.me", ni localhost, no han funcionado

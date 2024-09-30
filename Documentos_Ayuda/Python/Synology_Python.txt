@@ -1,13 +1,18 @@
 DOCUMENTACIÓN PARA EJECUTAR PYTHON EN NAS SYNOLOGY
 
-1) Instalar Python en NAS, versión 3 preferiblemente.
+1) Instalar el paquete en Synology: "Python", versión 3 preferiblemente.
 
 2) Permitir conexión SSH para acceder, instalar paquetes, etc.
+    - ssh Javi@192.168.1.41       (funciona)
     - ssh -l usuario IP=DSN
 
 - Si se quiere acceder desde fuera de la red local, redireccionar puerto 22 del router a la IP del NAS.
 
 3) Instalar pip. Informacion en https://tomonota.net/ejecutar-python-en-synology/
+    - python -m ensurepip --upgrade
+    - python -m pip install --upgrade pip     ->  funciona
+
+   (no funciona)
     - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     - python3 get-pip.py
 

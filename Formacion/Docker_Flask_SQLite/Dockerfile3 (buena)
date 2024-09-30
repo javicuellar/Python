@@ -1,0 +1,41 @@
+# Usar la imagen base de Ubuntu
+FROM python:latest
+
+LABEL Maintainer="Prueba docker python"
+
+# Instalar paquetes necesarios
+# RUN apt-get update && apt-get install -y python3-pip  && apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update \
+#	&& apt-get upgrade -y \
+#	&& apt-get install -y python3-pip \
+#	&& apt-get install -y python3-venv \
+#    && apt-get clean \
+#    && rm -rf /var/lib/apt/lists/*
+
+COPY . /usr/src
+
+WORKDIR /usr/src
+
+# RUN python3 -m venv entornov
+
+# RUN chmod +x entornov/bin/activate
+
+# RUN . entornov/bin/activate 
+
+RUN pip install -r requirements.txt
+#	&& pip install Flask    Flask-SQLAlchemy    Flask-Login
+
+# Establecer el comando por defecto para ejecutar el terminal
+# CMD [ "python3", "./webapp.py"]
+CMD [ "python3", "webapp.py"]
+# CMD ["/bin/bash"]
+
+
+
+#  $ docker build -t prueba/python:1
+#  $ docker run -d -p 5010:5010 --name python_webapp prueba/python:1		# sin --netrower usa bridge, crea una nueva red interna
+#  $ docker run -d --name python_webapp --network host prueba/python:1		# con --network host usa la misma IP
+
+
+# ... docker image build -t prueba/ubuntu1  .
+# ... docker run -it prueba/ubuntu1 bash

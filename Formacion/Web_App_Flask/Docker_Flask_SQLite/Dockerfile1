@@ -1,0 +1,46 @@
+# FROM python:latest
+FROM debian
+
+LABEL Maintainer="Prueba docker 1"
+
+RUN apt-get update && apt-get install -y python3-pip  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY . /usr/src
+
+WORKDIR /usr/src
+
+RUN python3 -m venv entornov
+# RUN pip install -r requirements.txt
+# RUN apt install python3 -m pip install Flask  Flask-SQLAlchemy  Flask-Login
+# RUN pip install Flask  Flask-SQLAlchemy  Flask-Login
+
+# CMD [ "python3", "./webapp.py"]
+CMD ["/bin/bash"]
+
+
+# Se crea un volume con el contenido de la aplicacion
+# VOLUME /Docker_Flask_SQLite
+ 
+
+#     Crear con la siguiente instrucción, le da etiqueta nombre del script
+#  ejecutar desde el directorio /volume1/Python/Docker_Flask_SQLite
+#
+#  $ docker image build --tag webapp.py  .											(ejecución desde el directorio del Dockerfile)  
+#  $ docker image build --tag webapp.py  /volume1/Python/Docker_Flask_SQLite        (si no se ejecuta desde el direcorio /volu....)
+
+
+#     Ver si se ha creado la imagen
+#  $ docker image ls
+
+#     Ejecutar nuestro contenedor
+#  $ docker run --rm webapp.py
+
+#  $ docker run -d -p 8080:5010 --restart unless-stopped -v $(pwd)/Docker_Flask_SQLite:/Docker_Flask_SQLite pruebadockerwebpython/uwsgi
+
+#     Ver contenedores y su estado (ejecución, parados, etc.)
+#  $ docker ps -a
+
+
+#  Otro ejemplo
+#  $ docker build -t josedom24/myapache2:v2 .		# el punto es el directorio
+#  $ docker run -d -p 8080:80 --name servidor_web josedom24/myapache2:v2 
