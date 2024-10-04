@@ -1,0 +1,55 @@
+
+Para intentar crear el fichero .exe y .apk del proyecto (sin éxito) hemos implantado y dejado pendiente:
+
+    - Android Studio    C:\Program Files\Android\Android Studio
+
+        * Nuevo proyecto, creando Android SDK   C:\Users\javic\AppData\Local\Android\Sdk
+    
+    - cmdline-tools     C:\Users\javic\AppData\Local\Android\Sdk
+
+    - NDK  (descargado y copiad en carpeta ndk)     C:\Users\javic\AppData\Local\Android\Sdk\ndk
+
+    - Flutter           C:\flutter
+
+    - Directorio projecto:      C:\Users\javic\AndroidStudioProjects\MyApplication
+
+
+
+Prueba, crear apk
+
+D:\Python\Formacion\Flet_Google> flet build apk
+
+
+Error: 
+* ¿?
+    Running Gradle task 'assembleRelease'...
+    Warning: Errors during XML parse:
+    Warning: Additionally, the fallback loader failed to parse the XML.
+    Running Gradle task 'assembleRelease'...                          197,1s
+
+    You are applying Flutter's app_plugin_loader Gradle plugin imperatively using the apply script method, which is deprecated and will be    
+    removed in a future release. Migrate to applying Gradle plugins with the declarative plugins block:
+    https://flutter.dev/to/flutter-gradle-plugin-apply
+
+    FAILURE: Build failed with an exception.
+
+    * What went wrong:
+    A problem occurred configuring project ':serious_python_android'.
+    > NDK not configured. Download it with SDK manager. Preferred NDK version is '23.1.7779620'.
+
+    * Try:
+    > Run with --stacktrace option to get the stack trace.
+    > Run with --info or --debug option to get more log output.
+    > Run with --scan to get full insights.
+
+    * Get more help at https://help.gradle.org
+
+    BUILD FAILED in 3m 16s
+    Gradle task assembleRelease failed with exit code 1
+
+    Error building Flet app - see the log of failed command above.
+
+
+* Falta modo desarrollo
+    Please enable Developer Mode in your system settings.
+    $ start ms-settings:developers   -> Abre settings para activar modo desarrollo

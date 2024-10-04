@@ -2,6 +2,11 @@ import flet as ft
 import load as cg
 import pokemon as pk
 
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+
 def search_pokemon(pokemons: dict, name: str) -> pk.Pokemon:
     """
     Busca un Pokémon por su nombre en un diccionario de Pokémon.
