@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios Registrados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Usuarios Registrados</h1>
+    </header>
+    <div class="container">
+        <a href="{{ url_for('register') }}">Registrar Nuevo Usuario</a>
+        <ul>
+            {% for usuario in usuarios %}
+                <li>
+                    {{ usuario.username }}
+                    <a href="{{ url_for('edit_user', id=usuario.id) }}">Editar</a>
+                    <form action="{{ url_for('delete_user', id=usuario.id) }}" method="POST" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+    </div>
+</body>
+</html>

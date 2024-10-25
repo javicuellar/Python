@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Editar Usuario</h1>
+    </header>
+    <div class="container">
+        <form method="POST">
+            <h2>Editar Usuario</h2>
+            <input type="text" name="username" value="{{ usuario.username }}" required>
+            <input type="password" name="password" placeholder="Nueva Contraseña" required>
+            <button type="submit">Actualizar</button>
+        </form>
+        <a href="{{ url_for('usuarios') }}">Cancelar</a>
+    </div>
+</body>
+</html>
