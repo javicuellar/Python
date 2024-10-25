@@ -1,0 +1,110 @@
+Date: 25/10/2024
+Time: 8:35
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 8:46
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 8:50
+Phone Number: +34652196613
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 8:52
+Phone Number: +34652196613
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:3
+Phone Number: +34652196613
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 9:5
+Phone Number: +34652196613
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:11
+Phone Number: +34652196613
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 9:13
+Phone Number: +34652196613
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:16
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 9:18
+Phone Number: +34690662411
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:42
+Phone Number: +34690662411
+Message: Mensaje desde Python usando la libreria Pywhatkit, conforme si te llego el mensaje
+--------------------
+Date: 25/10/2024
+Time: 9:42
+Phone Number: +34690662411
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:45
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 9:47
+Phone Number: +34690662411
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 9:49
+Phone Number: +34690662411
+Message: Mensaje desde Python usando la libreria Pywhatkit, conforme si te llego el mensaje
+--------------------
+Date: 25/10/2024
+Time: 9:51
+Phone Number: +34690662411
+Message: Mensaje desde Python usando la libreria Pywhatkit, conforme si te llego el mensaje
+--------------------
+Date: 25/10/2024
+Time: 9:53
+Phone Number: +34690662411
+Message: Mensaje desde Python usando la libreria Pywhatkit, conforme si te llego el mensaje
+--------------------
+Date: 25/10/2024
+Time: 9:57
+Phone Number: +34690662411
+Message: Mensaje desde Python usando la libreria Pywhatkit, conforme si te llego el mensaje
+--------------------
+Date: 25/10/2024
+Time: 9:58
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 10:1
+Phone Number: +34690662411
+Message: Hola Python2
+--------------------
+Date: 25/10/2024
+Time: 10:3
+Phone Number: +34690662411
+Message: Hola Python
+--------------------
+Date: 25/10/2024
+Time: 10:4
+Phone Number: +34690662411
+Message: Hola Python2
+--------------------
