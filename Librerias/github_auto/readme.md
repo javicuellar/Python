@@ -6,6 +6,8 @@ Paquete.-  PyGithub
   * Se realiza el login en github y se crea el repositorio nuevo
 
 
+Se produce un error al crear el repositorio debido a que no se ha hecho el login ¿?
+
 
 Instrucciones originales para linux -> https://github.com/hastagAB/Awesome-Python-Scripts/tree/master/git_automation
 
