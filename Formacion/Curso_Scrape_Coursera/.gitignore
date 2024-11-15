@@ -1,0 +1,2 @@
+# filtramos varialbes de entorno
+*.env
