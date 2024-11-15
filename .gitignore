@@ -5,6 +5,9 @@ App
 .SynologyWorkingDirectory
 #  Directorios excluidos
 
+#  Excluimos también el fichero de códigos de Github
+github-recovery-codes.txt
+
 #  Carpeta Python antigua, hay que ir organizandola hasta eliminarla
 /Python*
 
