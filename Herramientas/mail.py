@@ -25,7 +25,6 @@ def Conexion(user, password, mensaje):
         print(f"Error al enviar mail: {e}")
     
 
-
 #  Envío mail sencillo (sin adjuntos)
 def Envio_mail(user, password, asunto, mensaje, destinatario):
     msg = EmailMessage()
