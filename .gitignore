@@ -1,28 +1,14 @@
 #  No llevamos al repositorio las carpetas
-$ Documentación
-$ Tutorial Python 3 (videos)
-App
-.SynologyWorkingDirectory
-#  Directorios excluidos
+# $ Documentación
+# $ Tutorial Python 3 (videos)
 
 #  Excluimos también el fichero de códigos de Github
 github-recovery-codes.txt
-
-#  Carpeta Python antigua, hay que ir organizandola hasta eliminarla
-/Python*
-
-# App  - Utilidades
-/App
 
 # Documentación Python
 /Documentos_Ayuda/Libros
 /Documentos_Ayuda/Video*
 
-# Proyectos python
-/Proyectos
-
-# Repositorios Clonados   
-/Repositorios*
 
 #  archivos __pycache__
 **/__pycache__
