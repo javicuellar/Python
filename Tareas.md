@@ -1,28 +1,22 @@
 # Tareas
 ========
 
-### TRABAJO
------------
-
-* GFOR.- Extraer datos de solicitudes (excel) del nuevo modelo.
-
-
 ### Otras
 ----------
 
 * FOTOS NAS.- Archivar.
 
-* Incluir en los backups directorio NAS_Python
+* Incluir en los backups directorio Python_NAS
 
 
 ### Python
 
-* Modificar nombre carpeta Python en NAS a NAS_Python, para tenerla en Visual Studio idenificada.
+* Espacio.- Archivar por versiones los proyectos.
+
 
 * Alertas.- En alerta_ficheros, analizar como incluir el tamaño de ficheros como parámetro. Y poner fuera del contenedor, en el volumen, para poder modificar automáticamente.
     Poner Alertas como un demonio que se ejecuta cada 5 minutos.
-
-* Llevar el proyecto AppWeb Finanzas a Github.
+    - Incluir alerta de ficheros, duplicados.
 
 * AppWeb Finanzas, realizar cálculos en los módulos y grabar en SQLite (actualizar cada 5 min.).
     - En web sólo lée de SQLite y muestra la información.
