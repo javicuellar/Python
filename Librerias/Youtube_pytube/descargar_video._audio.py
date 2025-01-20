@@ -1,7 +1,7 @@
 from pytube import YouTube
 
 
-def descargar_video(link):
+def descargar_video_audio(link):
     from pytube.innertube import _default_clients
     _default_clients["ANDROID_MUSIC"] = _default_clients["WEB"]
     
@@ -15,18 +15,29 @@ def descargar_video(link):
     print("Puntuación:  ", yt.rating)
     print("Se ha visto ", yt.views, " veces.")
     
-    ytStream = yt.streams.get_highest_resolution()
-
     try:
+        ytStream = yt.streams.get_highest_resolution()
         ytStream.download(skip_existing=True)
     except:
         print("Ha habido un problema con la descarga.")
     
-    print("Descarga realizada correctamente.")
+    print("Descarga video realizada correctamente.")
+
+    # Descarga del audio
+    audio_stream = yt.streams.filter(only_audio=True).first()
+
+    try:
+        audio_stream.download()
+    except:
+        print("Ha habido un problema con la descarga.")
+    
+    print("Descarga audio realizada correctamente.")
+
+
 
 
 
 link = input("Video a descargar: ")
 
 #  Descargamos el video
-descargar_video(link)
+descargar_video_audio(link)
