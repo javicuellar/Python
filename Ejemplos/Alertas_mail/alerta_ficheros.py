@@ -4,19 +4,18 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
-from herramientas.variables import Variables
-
-
 
 # Recuperación variables de configuración
-v = Variables() 
+from Herramientas.variables import USUARIO, PASSWORD, DESTINATARIO
+
+
 
 # Configuración del directorio y parámetros de correo
 DIRECTORIO = '\\NAS\video'
 TAMANO_MINIMO = 5 * 1024 * 1024 * 1024      # 5 GB en bytes
-EMAIL_REMITE = 'ralleuc@gmail.com'
-EMAIL_DESTINO = 'javicu25@gmail.com'
-PASSWORD = 'tu_contraseña'
+EMAIL_REMITE = USUARIO
+EMAIL_DESTINO = DESTINATARIO
+PASSWORD = PASSWORD
 SMTP_SERVER = 'smtp.example.com'
 SMTP_PORT = 587
 
@@ -55,7 +54,7 @@ def enviar_correo(archivo_adjunto):
 
 # Función principal
 def main():
-    archivos_grandes = buscar_archivos_grandes(DIRECTORIO_VIDEO)
+    archivos_grandes = buscar_archivos_grandes(DIRECTORIO)
     if archivos_grandes:
         # Crear DataFrame y guardar en Excel
         df = pd.DataFrame(archivos_grandes, columns=['Nombre', 'Ruta', 'Tamaño (bytes)'])

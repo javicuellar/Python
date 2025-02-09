@@ -42,18 +42,6 @@ def email_alerta(asunto, mensaje, destinatario, user, password):
 
 
 if __name__ == '__main__':
-    import sys, os
+    from Herramientas.variables import USUARIO, PASSWORD, DESTINATARIO
 
-    # Para Windows añadimos path a librerías python, para añadir librerías mías de Herramientas
-    if os.name == 'nt':
-        sys.path.append(os.path.join(os.path.dirname(__file__), '\\Python'))
-        DIRECTORIO = 'D:\\'
-    else:
-        DIRECTORIO = '/video'
-
-
-    from Herramientas.variables import Variables
-
-    var = Variables()
-
-    email_alerta("ALERTA - mail", "Mensaje de prueba desde python", "javicu25@gmail.com", var.usuario, var.password)
+    email_alerta("ALERTA - mail", "Mensaje de prueba desde python", DESTINATARIO, USUARIO, PASSWORD)
