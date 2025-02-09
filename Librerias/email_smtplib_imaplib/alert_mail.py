@@ -2,7 +2,8 @@ import smtplib, ssl
 from email.message import EmailMessage
 
 
-def email_alert(asunto, mensaje, destinatario):
+
+def email_alerta(asunto, mensaje, destinatario, user, password):
     msg = EmailMessage()
     msg['subject'] = asunto
     msg['to'] = destinatario
@@ -13,9 +14,6 @@ def email_alert(asunto, mensaje, destinatario):
     # msg["Importance"] = "high"
     # msg['X-Priority'] = '0'
     # msg['priority'] = "high"
-
-    user = "ralleuc@gmail.com"
-    password = "fgor aihs oaiy ivvy"
 
     # Create a secure SSL context
     context = ssl.create_default_context() 
@@ -41,12 +39,21 @@ def email_alert(asunto, mensaje, destinatario):
     server.quit()
 
 
-if __name__ == '__main__':
-    activo = 'SSL'
-    tipo_alerta = 'Bajada precio '    # Tipo de alerta
-    alerta = tipo_alerta + activo
 
-    # email_alert("IMPORTANTE - " + alerta, "Mensaje de prueba desde python", "javicu25@gmail.com")
-    
-    #  En el móvil no avisa, popup, si en el asunto va ALERTA en lugar de IMPORTANTE.
-    email_alert("ALERTA - " + alerta, "Mensaje de prueba desde python", "javicu25@gmail.com")
+
+if __name__ == '__main__':
+    import sys, os
+
+    # Para Windows añadimos path a librerías python, para añadir librerías mías de Herramientas
+    if os.name == 'nt':
+        sys.path.append(os.path.join(os.path.dirname(__file__), '\\Python'))
+        DIRECTORIO = 'D:\\'
+    else:
+        DIRECTORIO = '/video'
+
+
+    from Herramientas.variables import Variables
+
+    var = Variables()
+
+    email_alerta("ALERTA - mail", "Mensaje de prueba desde python", "javicu25@gmail.com", var.usuario, var.password)
