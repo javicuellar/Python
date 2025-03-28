@@ -1,0 +1,157 @@
+
+Pasado a Google docs
+
+https://docs.google.com/document/d/1WMqvotOFC1aAd7Hc9__qRgG9VT63Yfm4h65uyW4zvt8/edit?tab=t.0
+
+Pasos
+
+0) Realizar en terminal cmd  (NO en powershell)
+
+1) Instalar virtualenv      -> pip install virtualenv
+   Comprobar version        -> virtualenv --version
+2) Crear entorno virtual    -> virtualenv venv
+3) Ejecutar entorno         -> .\venv\Scripts\activate
+
+4) Seleccionar interprete en VS Code ->  F1 -> "Select interprete"
+   Y después -> F1 "Craar nuevo terminal"     (abrirá directamente al entorno virtual)
+   Si hay varias áreas de trabajo, primero hay que Seleccionar el áraea
+   En mi caso lo hice a mano porque no me lo encuentra (en un terminal, ejecutando el paso 3)
+
+
+En ENTORNO VIRTUAL
+------------------
+
+1) Instalar Django -> pip install django
+    Comprobar               -> django-admin --version
+    Otra forma de comprobar -> python -m django --version
+
+
+Crear un projeto Django
+=======================
+
+1) Crear proyecto                           -> django-admin startproject mysite
+    Crea carpeta mysite, y en esta crea otra carpeta mysite con el proyecto
+
+   Crear projecto en carpeta que estamos    -> django-admin startproject mysite .
+
+2) Arrancar Django  -> python manage.py runserver
+    Definir puerto  -> python manage.py runserver 3000
+
+3) Para ver los comandos Django disponibles -> python manage.py runserver help
+
+
+Estructura del proyecto
+
+- El proyecto crea la base de datos: db.sqlite3, es una base de datos simple que después
+ se puede migrar a la definitva en producción.
+
+- settings.py
+ Para configurar el proyecto (ALLOWED_HOSTS, DEBUG, SECRET_KEY, BASE_DIR, INSTALLED_APPS).
+ También DATABASES, donde se define el engine y el nombre (sqlite3)
+ O el LANGUAGE_CODE, etc. incluso ficheros estáticos STATIC_URL.
+
+- urls.py
+ Para definir las rutas que el usuario puede usar.
+
+- asgi.py y wsgi.py
+ Relacionado a cómo vamos a ejecutar el proyecto
+
+
+Aplicaciones
+
+- Concepto.- Los proyectos están conformados por aplicaciones, cada parte, mantenimiento catálogos, pagos, etc. es una aplicación.
+ Básicamente son funcionalidades separadas.
+
+- Crear aplicaciones -> python manage.py startapp myapp
+ Crea carpeta myapp para la funcionaldidad para esa aplicación.
+
+La configuración y manejo de las aplicaciones se hace desde el proyecto, carpeta mysite.
+Hasta que no se incluyan las aplicaciones, NO ESTAN CONECTADAS.
+
+
+- views.py
+ Controla que vamos a "enviar" al usuario, son los archivos html
+
+- migrations  (carpeta)
+ Manejo de la base de datos mediante ORM, sin código SQL directo (aunque si se puede utilizar código directo)
+
+- admin.py  -> Panel administrador, permisos o roles de usuarios, etc.
+- apps.py   -> confirgurar la aplicación, como settings pero sólo de la aplicación
+- models.py -> definir clases que serán las tablas de sqlite3, 
+  si lo modificamos, django lo actualizará mediante migrations.
+- tests.py  -> pruebas, tests de código
+
+----------------------------------------------------------------------------------------
+Hola mundo
+  - views.py.- Defines funciones que serán las páginas Httml que se podrán ver.
+  - urls.py (del proyecto).- Define la ruta a esas funciones/páginas html.
+
+Se puede mejorar manejando cada app sus urls
+  - Creo fichero urls.py en aplicación myapp
+  - Utilizo include en urls del proyecto para incorporar todos los patch de la aplicación
+  Puedo poner prefijo a todas las urls indicando un valor al path o dejarlo en blanco.
+
+
+Modésos y Bases de datos:
+  - Al arrancar el proyecto con "python manage.py runserver 3000", en los mensajes informa que hay migraciones
+  no aplicadas (en mi caso 18). Es la forma de actualizar el proyecto (creando tablas, actualizando campos, etc.)
+  Para ello se utiliza el comando:
+    python manage.py makemigrations         "inicia"
+    python manage.py migrate                "Ejecuta las migraciones"
+
+  Crea las tablas de administración (o las de usuario si las hubiera)
+
+  Crear nuestras tablas:   models.py
+    - Creo una clase con mi tabla Project y creo un campo name de tipo CharField.
+
+    - settings.py (proyecto).- incluyo mi aplicación en INSTALLED_APPS.
+    Al ejecutar "python manage.py makemigrations" va a buscar todas las migraciones de todos los proyectos y sus aplicaciones.
+    Y va a detectar que falta migración para crear la tabla nueva.
+
+
+Manejo de tablas desde Django shell
+-----------------------------------
+
+Commandos para manejar las bases de datos.
+    python manage.py shell      entra en terminal python
+
+>>> from myapp.models import Project, Task
+>>> p = Project(name="aplicacion movil")
+>>> p.save()
+
+crea una variable del projecto y la graba (un registro de la tabla)
+
+>>> Project.objects.all()
+devuelve todos los objetos de la base datos, en una lista.
+
+>>> Project.objects.get(id=1)
+recupera por id el registro
+
+>>> Project.objects.get(name="aplicacion movil")
+deveulve el registro por nombre, debe ser exactamente igual, sino da error no existe.
+
+puedo ver si un proyecto tiene alguna tarea asignada (si en tareas hay algún proyecto...)
+>>> p = Project.objects.get(id=1)
+>>> p.task_set.all()
+devuelve lista vacía, porque el proyecto no tiene tareas.
+
+>>> p.task_set.create(title='descargar IDE')
+crea la tarea dentro del proyecto p (id=1)
+
+podemos consultar todas las tareas de un proyeto otra vez, devolvera la tarea
+>>> p.task_set.all()
+podemos consultar una única tarea por id
+>>> p.task_set.get(id=1)
+devolverá error si no encuentra.
+
+para que cuando no exista devuelva none o null, 
+usarmos "camppo"__startswith para que busque los que empiecen por ...
+>>> Project.objects.filter(name__startswith="aplicacion m")      
+
+Podemos crear una variable del objeto Projects, y después realizar el filtro, es mas claro.
+>>> p = Project.objects
+>>> p.filter(name__startswith="aplicacion")
+
+
+Manejo de parámetros en Django   (1:22 del video)
+-------------------------------------------------

@@ -12,5 +12,10 @@ Scripts de ejemplos `Python` de formación.
 * **Flujos White For** - Flujos, bucles white y for en python
 * **Funciiones** - Ejemplos de definición de funciones python
 * **Kivy** - Ejemplos de un pequeño tutorial
+* **API_Rest** - Pruebas realizadas de cracción de un API-REST y llamadas a APIs públicas.
+* **djangoproject** - Prueba desarrollo django
+* **Flet** - Pruebas y ejemplos
+    - Automatizar -> muy interesante
+
 
 * **Ejemplos** - Varios ejemplos de scripts python, se pueden ejecutar desde el script "ejecutar_scripts_directorio.py"
