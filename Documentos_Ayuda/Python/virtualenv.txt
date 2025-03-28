@@ -1,0 +1,8 @@
+Pasos para Crear un entorno virtual
+
+0) Realizar en terminal cmd  (NO en powershell)
+
+1) Instalar virtualenv      -> pip install virtualenv
+   Comprobar version        -> virtualenv --version
+2) Crear entorno virtual    -> virtualenv venv
+3) Ejecutar entorno         -> .\venv\Scripts\activate
