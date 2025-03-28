@@ -19,7 +19,14 @@ Repositorio con documentación, ejemplos y casos de librerías `Python`.
 * Librerías
 
 
+### Normas, recomendaciones
+----------------------------------------------------------------------------------------------
+
+* [12 recomendaciones codificación Python]()
+
+
 ### Enlaces interesantes
+----------------------------------------------------------------------------------------------
 
   Enlaces interesantes para leer y revisar.
 

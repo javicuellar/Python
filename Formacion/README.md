@@ -3,6 +3,7 @@
 
 Scripts de ejemplos `Python` de formación.
 
+
 ### Normas, recomendaciones
 ----------------------------------------------------------------------------------------------
 
