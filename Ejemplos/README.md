@@ -30,4 +30,18 @@
 * **Varios**
     - `curso algoritmos` - función con cálculo de cuadrados de números ¿?
     - `mastermind` - juego para adinivar un número de 4 cifras.
-    - `Automated Schude...`
+    - `Automated Schude...` - Automatiza recordatorio de llamadas, con programación de tareas
+    - `leer_ficheros_dia` - Obtiene los ficheros actualizados en n días últimos del directorio dado
+
+* **Automatizar**
+    - `organizar_archivos` - lee los archivos de la carpeta origen e incluye los PDF en carpeta destino
+    - `enviar_email` - envío de mails automáticos
+    - `extraer_datos_web` - scrapper mediante BeautifulSoap de webs
+    - `automatizar_whatsapp` - envío de WhatsApp
+    - `crear_recordatorio` - uso de librería schedule para recordar tareas
+
+* **Eliminar_duplicados**
+    - Ejemplo de scripts para detectar ficheros duplicaados y eliminarlos.
+
+* **Leer_películas_directorio**
+    - Ejemplo con librería themoviedb para leer los archivos de un directorio y buscar que película es.
