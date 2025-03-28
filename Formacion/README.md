@@ -7,7 +7,7 @@ Scripts de ejemplos `Python` de formación.
 ### Normas, recomendaciones
 ----------------------------------------------------------------------------------------------
 
-* [12 recomendaciones codificación Python]()
+* [12 recomendaciones codificación Python](https://github.com/javicuellar/Python/blob/master/Formacion/12_recomendaciones.ipynb)
 
 
 
