@@ -1,8 +1,17 @@
 ## Python - Formación
+---------------------------------------------------------------------------------------------
 
 Scripts de ejemplos `Python` de formación.
 
+### Normas, recomendaciones
+----------------------------------------------------------------------------------------------
+
+* [12 recomendaciones codificación Python]()
+
+
+
 ### Ejemplos scripts Python formación
+----------------------------------------------------------------------------------------------
 
 * **Clases OOP** - Ejemplos de clases de Programación Orientada a Objetos
 * **Datos Python** - Ejemplos de varios tipos de datos Python (diccionarios, listas, etc.)
