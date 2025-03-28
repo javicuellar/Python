@@ -1,0 +1,5 @@
+selenium
+webdriver_manager
+pandas
+openpyxl
+numpy==1.26.4

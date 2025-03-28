@@ -1,3 +1,14 @@
+##############################################################################################
+#   Links ayuda: 
+#    - https://yuji.wordpress.com/2011/06/22/python-imaplib-imap-example-with-gmail/
+#    - https://docs.python.org/3/library/imaplib.html
+#    - https://docs.python.org/3/library/email.message.html
+#    - https://docs.python.org/3/library/email.parser.html
+#    - https://github.com/martinrusev/imbox
+#    - https://yuji.wordpress.com/2011/06/22/python-imaplib-imap-example-with-gmail/
+#    - https://www.reddit.com/r/Python/comments/qpe8n6/i_created_a_gmail_api_client_for_python/?tl=es-es&rdt=43952
+#    - https://github.com/martinrusev/imbox
+##############################################################################################
 from Herramientas.variables import USUARIO_JAVI, PASSWORD_JAVI   # Recuperar variables de usuario y contraseña
 
 import imaplib

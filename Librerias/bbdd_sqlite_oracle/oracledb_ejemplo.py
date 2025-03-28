@@ -1,18 +1,36 @@
 import getpass
 import oracledb
 
+
 # pw = getpass.getpass("Enter password: ")
+user="dba_gfor_rft"
 pw = 'vbnfgh'
 
-connection = oracledb.connect(
-    user="dba_gfor_rft",
-    password=pw,
-    dsn="localhost/varhins")
+dsn ="varhins.madrid.org"
+# connection = oracledb.connect(user=user, password=pw, dsn=dsn)
+#  devuelve error: oracledb.exceptions.DatabaseError: DPY-4027: no configuration directory specified
 
-#  Esta dando el siguiente error: [WinError 10061] No se puede establecer una conexión ya que
-# el equipo de destino denegó expresamente dicha conexión
+
+# Segundo intento de conexión
+host = "varhins.madrid.org"
+port = 1521
+service_name = "varhins"
+
+dsn = f'{user}/{pw}@{host}:{port}/{service_name}'
+# connection = oracledb.connect(dsn)
+#  devuelve error: socket.gaierror: [Errno 11001] getaddrinfo failed
+
+
+
+#  Tercer intento de conexión
+params = oracledb.ConnectParams(host=host, port=port, service_name=service_name)
+connection = oracledb.connect(user=user, password=pw, params=params)
+#  devuelve error: socket.gaierror: [Errno 11001] getaddrinfo failed
+
 
 print("Successfully connected to Oracle Database")
+
+
 
 cursor = connection.cursor()
 
