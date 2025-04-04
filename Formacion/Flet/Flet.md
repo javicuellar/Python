@@ -29,3 +29,5 @@ Se puede ejecutar en aplicación Windows, en web, en android, ...
 - **App_Banca (incompleta)**
 - **App-With-Flet-master** - Aplicación gestión tienda con bd MySQL
 
+- **Tareas** - Aplicación para el manejo de tareas y lista de tareas. Será la base de un proyecto mayor.
+
