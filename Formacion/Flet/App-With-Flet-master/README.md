@@ -1,4 +1,9 @@
 # App-With-Flet
+   https://github.com/HelioCard/App-With-Flet
+
+
+Usuario:  javi  (123)
+
 
 ## Descrição
 O projeto foi desenvolvido com o objetivo de estudar e praticar programação em Python, manipulação de banco de dados MySQL e Flet para criação de interfaces gráficas. A ideia era criar uma aplicação que permitisse gerenciar cadastro de usuários, clientes, produtos, vendas e controlar o estoque de forma simples e eficiente.

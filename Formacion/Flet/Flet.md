@@ -27,4 +27,5 @@ Se puede ejecutar en aplicación Windows, en web, en android, ...
 ### Ejemplos
 
 - **App_Banca (incompleta)**
-- **App-With-Flet-master**
+- **App-With-Flet-master** - Aplicación gestión tienda con bd MySQL
+

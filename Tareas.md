@@ -11,9 +11,6 @@
 
 ### Python
 
-* Espacio.- Archivar por versiones los proyectos.
-
-
 * Alertas.- En alerta_ficheros, analizar como incluir el tamaño de ficheros como parámetro. Y poner fuera del contenedor, en el volumen, para poder modificar automáticamente.
     Poner Alertas como un demonio que se ejecuta cada 5 minutos.
     - Incluir alerta de ficheros, duplicados.
