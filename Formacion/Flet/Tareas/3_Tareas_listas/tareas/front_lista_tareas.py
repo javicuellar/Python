@@ -57,7 +57,8 @@ class Lista_TareasApp(ft.UserControl):
                     icon = ft.icons.SAVE,
                     icon_color= "white",
                     style= ft.ButtonStyle(color = "white",  bgcolor ="black"),
-                    # on_click= self.add_data,
+                    on_click= self.page.window_destroy,     # salir de la aplicación
+                    tooltip="Filtrar",                      # descripción del botón
                     ),
                 ft.Divider(height=1, color=ft.colors.GREY),  # Línea separadora
                 self.lista,

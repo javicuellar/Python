@@ -24,13 +24,23 @@ Proyecto para definir modelo/patrón de aplicación en principio web (escritorio
 * [Enlace](https://enlace)
 
 
-### Bitácora del proyecto
+### **Pruebas, ejemplos**
+
+    - Pasar DataTable y otros a Formación, sacándolo de Tareas
+    - Usar ft.Stack para superponer Containers o Columnas.
+    - Aplicación similar:  https://flet.dev/docs/tutorials/trello-clone
+
+
+### Bitácora
 ----------------------------------------------------------------------------------------------
 
 * **4 abril 25**
 
+  - Juntar las dos aplicaciones (tareas y Lista tareas) en una. Usar de ejemplo Automatizar.
+
   **Tareas**
     - Ahora se está haciendo scroll en pestañas y tareas, dejar sólo el scroll en tareas.
+    - Ampliar tarea, descripción, tarea de tareas, etiquetas.
 
   **Lista tareas**
     - Completar front con el alta, actualización y borrado de listas de tareas.

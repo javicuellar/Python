@@ -1,6 +1,3 @@
-"""
-  Copiado:  https://github.com/flet-dev/examples/blob/main/python/apps/todo/todo.py
-"""
 import flet as ft
 from tareas.front_lista_tareas import Lista_TareasApp
 
