@@ -18,6 +18,9 @@ Proyecto para definir modelo/patrón de aplicación en principio web (escritorio
 * Tareas.- pantallas (front) y accesos a bbdd (tb_ tablas)
 
 
+## ABANDONO EL PROYECTO POR NO ENCONTAR COMO HACER FUNCIONAR EN EL NAS CON HTTS (SSL)
+
+
 ### Enlaces de interés
 ----------------------------------------------------------------------------------------------
 
@@ -29,6 +32,7 @@ Proyecto para definir modelo/patrón de aplicación en principio web (escritorio
     - Pasar DataTable y otros a Formación, sacándolo de Tareas
     - Usar ft.Stack para superponer Containers o Columnas.
     - Aplicación similar:  https://flet.dev/docs/tutorials/trello-clone
+        Usar trolli como ejemplo de login - usuario
 
 
 ### Bitácora
@@ -36,7 +40,7 @@ Proyecto para definir modelo/patrón de aplicación en principio web (escritorio
 
 * **4 abril 25**
 
-  - Juntar las dos aplicaciones (tareas y Lista tareas) en una. Usar de ejemplo Automatizar.
+  - Integrar las dos aplicaciones (tareas y Lista tareas) en una. Usar de ejemplo Automatizar.
 
   **Tareas**
     - Ahora se está haciendo scroll en pestañas y tareas, dejar sólo el scroll en tareas.

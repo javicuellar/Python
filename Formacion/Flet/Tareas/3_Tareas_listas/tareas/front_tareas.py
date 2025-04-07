@@ -24,10 +24,11 @@ class TareasApp(ft.Column):
         self.width = 600
         
         self.controls = [
-            ft.Row(
-                [ft.Text(value="Tareas", theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM)],
-                alignment=ft.MainAxisAlignment.CENTER,
-                ),
+            ft.Text(value="Tareas", 
+                    theme_style=ft.TextThemeStyle.HEADLINE_MEDIUM,
+                    text_align= ft.TextAlign.LEFT,
+                    weight=ft.FontWeight.BOLD),
+            ft.Divider(height=1, color=ft.colors.GREY),  # Línea separadora
             ft.Row(alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                    controls=[self.tarea_nueva,],
                 ),

@@ -20,26 +20,12 @@ def main(page: ft.page):
         expand=True,
         )
 
-  exit = ft.AlertDialog(
-        modal=True,
-        title=ft.Text("¿Quieres salir de la aplicación?"),
-        content=ft.Text("¿Quieres salir de la aplicación?"),
-        actions=[
-          ft.TextButton("Cancelar", on_click=lambda e: exit.close()),
-          ft.TextButton("Salir", on_click=lambda e: page.window_destroy()),
-          ],
-        )
-
-
   # Control de la vista del menú lateral
   def cambio_vista(seleccion):
     if seleccion == 0:
       area_detalle.content = tareaApp
     elif seleccion == 1:
       area_detalle.content = lista_tareas
-    elif seleccion == 3:
-      # Salir de la aplicación
-      page.exit_app()
         
     area_detalle.update()
     
@@ -62,19 +48,7 @@ def main(page: ft.page):
         selected_icon= ft.icons.EDIT,
         label= "Lista Tareas",
         ),
-      ft.NavigationRailDestination(
-        icon= ft.icons.SETTINGS_OUTLINED,
-        selected_icon= ft.icons.SETTINGS,
-        label= "Configuración",
-        ),
-      ft.NavigationRailDestination(
-        icon= ft.icons.EXIT_TO_APP,
-        selected_icon= ft.icons.EXIT_TO_APP_OUTLINED,
-        label= "Salir",
-        ),
-      ft.ElevatedButton("Dialogo Salir", on_click=lambda e: page.open(exit)),
       ],
-      # on_change=change_view,
       bgcolor= ft.colors.WHITE,
       on_change= lambda e: cambio_vista(e.control.selected_index),
       )
@@ -94,4 +68,4 @@ def main(page: ft.page):
 
 # Ejecutar la aplicación en escritorio
 # ft.app(target=main)
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main, view=ft.WEB_BROWSER, port=5010)

@@ -46,18 +46,20 @@ class Lista_TareasApp(ft.UserControl):
                         weight=ft.FontWeight.BOLD),
                 ft.Divider(height=1, color=ft.colors.GREY),  # Línea separadora
                 ft.Row(
-                    # alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     controls=[
                         ft.Text("Lista:  "),
-                        ft.TextField(expand=True, on_submit=self.addClick),
+                        ft.TextField(
+                            hint_text="Buscar lista",
+                            expand=True, 
+                            on_submit=self.buscar_lista),
                         ],
                     ),
                 ft.TextButton(text="Filtrar",
                     icon = ft.icons.SAVE,
                     icon_color= "white",
                     style= ft.ButtonStyle(color = "white",  bgcolor ="black"),
-                    on_click= self.page.window_destroy,     # salir de la aplicación
+                    # on_click= self.page.window_destroy,     # salir de la aplicación NO FUNCIONA
                     tooltip="Filtrar",                      # descripción del botón
                     ),
                 ft.Divider(height=1, color=ft.colors.GREY),  # Línea separadora
@@ -105,7 +107,7 @@ class Lista_TareasApp(ft.UserControl):
     def delete_data(self):
         pass
 
-    def addClick(self):
+    def buscar_lista(self):
         pass
 
 
