@@ -26,6 +26,11 @@
 ### **Pruebas, ejemplos**
 
     - Pruebas con Flask
+    - Plantillas y manejo de "TODO"     https://blog.appseed.us/flask-template-bootstrap-open-source/
+        flask-adminite
+        flask-material-dashboard
+        ...
+
 
 
 ### Bitácora

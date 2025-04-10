@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block contenido %}
+	    <h3>Nuestros videojuegos...</h3>
+	    <div class="panel panel-default">
+  		<!-- Default panel contents -->
+  			<div class="panel-heading">Videojuegos</div>
+  			<table class="table">
+  	    		{% for art in articulos %}
+  	    			<tr>
+  	    				<td>{{art.nombre}}</td>
+  	    			</tr>
+  	    		{% endfor %}
+  	    	</table>
+  	    </div>
+  	</div>
+
+ 	
+  
+{% endblock %}

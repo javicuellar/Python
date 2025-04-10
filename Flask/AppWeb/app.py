@@ -30,10 +30,10 @@ class Usuario(db.Model, UserMixin):
 
 
 
-# @app.before_request
-# def before_request():
-#     if request.scheme != 'https':
-#         return redirect(request.url.replace('http://', 'https://'))
+@app.before_request
+def before_request():
+    if request.scheme != 'https':
+        return redirect(request.url.replace('http://', 'https://'))
 
 
 @login_manager.user_loader
@@ -49,8 +49,8 @@ def login():
         usuario = Usuario.query.filter_by(username=username, password=password).first()
         if usuario:
             login_user(usuario)
-            # return redirect(url_for('usuarios'))
-            return redirect(url_for('estudiantes'))
+            return redirect(url_for('usuarios'))
+            # return redirect(url_for('estudiantes'))
         else:
             flash('Credenciales incorrectas.')
     return render_template('login.html')
@@ -154,9 +154,86 @@ def estudiantes_actualizar():
         estudiante.email = request.form['email']
         estudiante.phone = request.form['phone']
         db.session.commit()
-        print(f"Registro actualizado: {estudiante.name}, {estudiante.email}, {estudiante.phone}")
+        # print(f"Registro actualizado: {estudiante.name}, {estudiante.email}, {estudiante.phone}")
         flash("Data Updated Successfully")
         return redirect(url_for('estudiantes'))
+
+
+
+# ------------------------------------------------------------------------------------
+
+#  Tratamiento Usuarios = CRUD
+
+class Users(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(10), unique=True, nullable=False)
+    name = db.Column(db.String(255), nullable=False)
+    password = db.Column(db.String(15), nullable=False)
+
+
+# template_dir = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+# template_dir = os.path.join(template_dir, 'src', 'templates')
+# app = Flask(__name__, template_folder = template_dir)
+
+
+#Rutas de la aplicación
+@app.route('/users')
+def users_home():
+    myresult = Users.query.all()
+    
+    # cursor = db.database.cursor()
+    # cursor.execute("SELECT * FROM users")
+    # myresult = cursor.fetchall()
+    #Convertir los datos a diccionario
+    insertObject = []
+    # columnNames = [column[0] for column in cursor.description]
+    columnNames = ['id', 'username', 'name', 'password']
+    
+    for record in myresult:
+        print(record)
+        insertObject.append(dict(zip(columnNames, (record.id, record.username, record.name, record.password))))
+    # cursor.close()
+    return render_template('index.html', data=insertObject)
+
+
+#Ruta para guardar usuarios en la bdd
+@app.route('/users/user', methods=['POST'])
+def users_addUser():
+    username = request.form['username']
+    name = request.form['name']
+    password = request.form['password']
+
+    if username and name and password:
+        nuevo_user = Users(username=username, name=name, password=password)
+        db.session.add(nuevo_user)
+        db.session.commit()
+        # flash("Data Inserted Successfully")
+    return redirect(url_for('users_home'))
+
+@app.route('/users/delete/<string:id>')
+def users_delete(id):
+    usuario = Users.query.get_or_404(id)
+    db.session.delete(usuario)
+    db.session.commit()
+    # flash("Record Has Been Deleted Successfully")
+    return redirect(url_for('users_home'))
+
+@app.route('/users/edit/<string:id>', methods=['POST'])
+def users_edit(id):
+    username = request.form['username']
+    name = request.form['name']
+    password = request.form['password']
+
+    if username and name and password:
+        usuario = Users.query.get_or_404(id) 
+        usuario.username = username
+        usuario.name = name
+        usuario.password = password
+        db.session.commit()
+        # flash("Data Updated Successfully")
+    return redirect(url_for('users_home'))
+
+
 
 
 

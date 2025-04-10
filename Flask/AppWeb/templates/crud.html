@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Página</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Barra de menú superior */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Menú lateral */
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Contenido principal */
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Parte central */
+        .main {
+            flex: 2;
+            background-color: #e2e2e2;
+            padding: 20px;
+            margin-right: 20px;
+        }
+
+        /* Parte derecha */
+        .right {
+            width: 250px;
+            background-color: #e2e2e2;
+            padding: 20px;
+        }
+
+        /* Enlaces del menú */
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #ddd;
+            margin-bottom: 10px;
+            color: #333;
+            border-radius: 4px;
+        }
+
+        .sidebar a:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de menú superior -->
+    <div class="header">
+        <h1>Mi Página Web</h1>
+    </div>
+
+    <div class="container">
+        <!-- Menú lateral -->
+        <div class="sidebar">
+            <a href="#">Inicio</a>
+            <a href="#">Servicios</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Contacto</a>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Parte central -->
+            <div class="main">
+                <h2>Bienvenido a nuestra página</h2>
+                <p>Este es el contenido principal de la página. Aquí puedes poner información relevante sobre tu sitio.</p>
+            </div>
+
+            <!-- Parte derecha -->
+            <div class="right">
+                <h3>Información adicional</h3>
+                <p>Aquí puedes agregar más información o widgets, como enlaces, noticias o cualquier otro dato relevante.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
