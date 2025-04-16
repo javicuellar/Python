@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %} Usuarios {% endblock %} 
+
+<!-- Element injected in the BODY element -->
+{% block body_class %} sidebar-mini {% endblock body_class %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="/static/css/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/static/css/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/static/css/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/static/css/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/static/css/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/static/css/summernote/summernote-bs4.min.css">
+
+{% endblock stylesheets %}
+
+{% block content %}
+  
+  <div class="content-wrapper">
+
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">AppWeb Flask</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Usuarios</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+      
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-12 connectedSortable">
+            
+            <div class="card-header">
+              <h3 class="card-title" style="font-size: 140%;">
+                <i class="ion ion-clipboard mr-1"></i>
+                <b>Mantenimiento de Usuarios</b>
+              </h3>
+            </div>
+        
+            <!-- /.card-header -->
+            <div class="card-body">
+              <form role="form" action="/alta_usuario" method="POST">
+                {{ form.hidden_tag() }}
+
+                <div class="form-row">
+                  <div class="form-group col-md-3">
+                      <div class="input-group">
+                        {{ form.usuario(placeholder="Usuario", class="form-control") }}
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-5">
+                      <div class="input-group">
+                        {{ form.email(placeholder="Email", class="form-control") }}
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <div class="input-group">
+                        {{ form.password(placeholder="Password", class="form-control", type="password") }}
+                        <div class="input-group-append">
+                          <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group rol-md-4">
+                    <button class="btn btn-primary mb-3 mt-0" type="submit">Alta usario</button>
+                  </div>
+                  <div class="form-group rol-md-8"></div>
+                    <p class="login-box-msg mb-1 mt-2">
+                      {% if msg %}
+                       <span class="text-danger">{{ msg | safe }}</span>
+                      {% else %}
+                        <span class="text-success">Mensaje por defecto</span>
+                      {% endif %}            
+                    </p>
+                  </div>
+              </form>
+        
+              <!-- Tabla -->
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Edit</th>
+                          <th scope="col">Delete</th>
+                      </tr>
+                  </thead>      
+              <tbody>
+                  {% for usuario in usuarios %}
+                      <tr>
+                          <td>{{usuario.id}}</td>
+                          <td>{{usuario.usuario}}</td>
+                          <td>{{usuario.email}}</td>
+                          <td><button class="btn btn-primary btn-sm" id="btn-edit{{usuario.id}}" data-bs-toggle="modal" data-bs-target="#modal{{usuario.id}}">Edit</button></td>
+                          <td><a href="{{url_for('usuarios_blueprint.baja_usuario', id=usuario.id)}}" class="btn btn-danger btn-sm">Delete</a></td>
+                      </tr>
+        
+                      <!-- modal -->
+                      <div class="modal fade" id="modal{{usuario.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{usuario.usuario}}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <form action="/edit/{{usuario.id}}" method="post">
+                                      <label>Usuario</label>
+                                      <input type="text" class="form-control mb-3" name="usuario" value="{{usuario.usuario}}">
+                                      <label>Email</label>
+                                      <input type="text" class="form-control mb-3" name="email" value="{{usuario.email}}">
+                                      <label>Password</label>
+                                      <input type="text" class="form-control mb-3" name="password" value="{{usuario.password}}">
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                              </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+        
+                  {% endfor %}
+        
+              </tbody>
+              </table>
+            </div>
+        
+            <!-- /.card-body -->
+            
+          </section>
+          
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+
+{% endblock javascripts %}

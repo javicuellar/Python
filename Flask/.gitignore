@@ -1,0 +1,13 @@
+#  No llevamos al repositorio las carpetas
+
+
+#  Excluimos los siguientes directorios por tener su propio repositorio
+/Tutorial-Flask*
+/0_App_web
+
+
+#  archivos __pycache__
+**/__pycache__
+
+**/venv
+**/*.pem

@@ -30,10 +30,10 @@ class Usuario(db.Model, UserMixin):
 
 
 
-@app.before_request
-def before_request():
-    if request.scheme != 'https':
-        return redirect(request.url.replace('http://', 'https://'))
+# @app.before_request
+# def before_request():
+#     if request.scheme != 'https':
+#         return redirect(request.url.replace('http://', 'https://'))
 
 
 @login_manager.user_loader
@@ -41,6 +41,7 @@ def load_user(user_id):
     return Usuario.query.get(int(user_id))
 
 
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
