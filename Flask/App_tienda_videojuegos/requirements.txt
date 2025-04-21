@@ -1,0 +1,7 @@
+Flask
+Flask-Script
+Flask-Bootstrap
+Flask-WTF
+Flask-Sqlalchemy
+Flask-Login
+pymysql

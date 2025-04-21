@@ -30,6 +30,9 @@
         flask-adminite
         flask-material-dashboard
         ...
+    - Realizado Tutorial Flask de J2LOGO (muy bueno)  https://j2logo.com/tutorial-flask-espanol/
+    - Probada aplicación Tienda Videojuegos (plantilla muy buena)  https://github.com/josedom24/tienda_videojuegos
+
 
     - Pruebas con HTML    https://www.w3schools.com/html/default.asp
 
@@ -37,6 +40,12 @@
 
 ### Bitácora
 ----------------------------------------------------------------------------------------------
+
+* **21 abril 2025** 
+
+  - Crear una base de proyecto python Flask: modelo estructura python (blueprints), modelo plantilla base, etc.
+      Tomar de base la Tienda de videojuegos
+
 
 * **5 abril 25**
 
