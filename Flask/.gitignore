@@ -2,7 +2,6 @@
 
 
 #  Excluimos los siguientes directorios por tener su propio repositorio
-/Tutorial-Flask*
 /0_App_web
 
 
